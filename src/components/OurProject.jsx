@@ -5,7 +5,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import younggirl from "../assets/projects/Young_girl.webp";
+import younggirl from "../assets/projects/Younggirl.webp";
 import Trible from "../assets/projects/Trible.webp";
 import mother from "../assets/projects/Mother.webp";
 import legal from "../assets/projects/Legal.webp";
