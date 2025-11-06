@@ -5,12 +5,12 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import younggirl from "../assets/projects/Younggirl.webp";
-import Trible from "../assets/projects/Trible.webp";
-import mother from "../assets/projects/Mother.webp";
-import legal from "../assets/projects/Legal.webp";
+import younggirl from "../assets/projects/younggirl.webp";
+import Trible from "../assets/projects/trible.webp";
+import mother from "../assets/projects/mother.webp";
+import legal from "../assets/projects/legal.webp";
 import finance from "../assets/projects/Finance.webp";
-import volunteer from "../assets/projects/Voluenteer.webp";
+import volunteer from "../assets/projects/voluenteer.webp";
 import environment from "../assets/project3.webp";
 import food from "../assets/projects/food1.webp";
 
