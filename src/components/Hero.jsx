@@ -13,7 +13,7 @@ import hero3 from "../assets/Hero3.webp";
 
 const Hero = () => {
   const [amount, setAmount] = useState("");
-  const presetAmounts = [500, 1000, 2000, 5000, 7000, 10000];
+  const presetAmounts = [500, 1000, 2000, 5000, 7000, 10000, 20000];
 
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
