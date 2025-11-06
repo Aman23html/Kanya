@@ -14,11 +14,11 @@ const Footer = () => {
         {/* Foundation Info */}
         <div>
           <h4 className="text-2xl font-bold mb-4 text-[#F8F9FA]">
-            Kanya Jagriti Foundation
+            KANYA JAGRITI FOUNDATION
           </h4>
           <p className="text-white/80 leading-relaxed mb-3">
-            Shammi Anand, Behind Mangaldeep Apartment,<br />
-            Dhaiya, Dhanbad - 826004, Jharkhand
+            C/o Mira Panja,Jharnapara, Nr. Babloo Dharamshala, 
+            Dhanbad Hirapur, Dhanbad, Dhanbad- 826001, Jharkhand
           </p>
           <p className="text-white/80">
             Email:{" "}
