@@ -13,7 +13,7 @@ import hero3 from "../assets/Hero3.webp";
 
 const Hero = () => {
   const [amount, setAmount] = useState("");
-  const presetAmounts = [500, 1000, 2000, 5000, 7000, 10000, 20000];
+  const presetAmounts = [500, 1000, 2000, 5000, 7000, 10000];
 
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -132,7 +132,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200 px-8 py-6 w-[90%] sm:w-[70%] md:w-[55%] z-30"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200 px-8 py-6 w-[90%] sm:w-[75%] md:w-[60%] z-30"
         >
           <h3 className="text-xl md:text-2xl font-bold text-[#007c7c] mb-4 text-left">
             Food Relief Fund
