@@ -6,9 +6,7 @@ const Testimonials = () => {
   return (
     <section className="container section">
       <h2>Testimonials</h2>
-      <div className="testimonials-grid">
-        {testimonials.map((t, i) => <TestimonialCard key={i} t={t} />)}
-      </div>
+      <TestimonialCard />
     </section>
   );
 };

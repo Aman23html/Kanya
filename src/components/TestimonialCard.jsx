@@ -4,6 +4,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/pagination";
+import test from "../assets/test.png";
 
 const testimonials = [
   {
@@ -12,7 +13,7 @@ const testimonials = [
     quote:
       "Before I joined the education center, I was always the quiet one in class. I struggled with maths and English. After three months at Shiksha Jyoti, I started answering questions in school and even helped a friend with her homework. I want to become a teacher one day.",
     program: "Student, Shiksha Jyoti Program",
-    img: "https://randomuser.me/api/portraits/women/75.jpg",
+    img: test,
   },
   {
     name: "Rahul Sinha",
@@ -20,7 +21,7 @@ const testimonials = [
     quote:
       "Teaching digital skills to women at Saksham Nari changed my perspective. One woman in her 40s told me she never believed she could learn to use a laptop — now she runs her own tailoring page on social media. It’s amazing what empowerment looks like up close.",
     program: "Volunteer Trainer, Saksham Nari",
-    img: "https://randomuser.me/api/portraits/men/64.jpg",
+    img: test,
   },
   {
     name: "Anjali Mishra",
@@ -28,7 +29,7 @@ const testimonials = [
     quote:
       "In the sessions we conduct under Nyay Sakhi, we start with basics — what rights women have under law. Many are shocked to learn they can fight for maintenance, property, or protection from abuse. Some cry, some smile. All of them leave a little stronger.",
     program: "Legal Educator, Nyay Sakhi Project",
-    img: "https://randomuser.me/api/portraits/women/72.jpg",
+    img: test,
   },
   {
     name: "Savitri Devi",
@@ -36,7 +37,7 @@ const testimonials = [
     quote:
       "I never earned a rupee before. Now, with four other women from my village, we run a small spice-making unit. I didn’t just learn how to manage money — I learned how to speak up in front of people. That’s what Nari Shakti Sangathan gave me.",
     program: "Self-Help Group Member, Giridih",
-    img: "https://randomuser.me/api/portraits/women/70.jpg",
+    img: test,
   },
   {
     name: "Rakesh Sharma",
@@ -44,7 +45,7 @@ const testimonials = [
     quote:
       "When the awareness sessions from Nari Suraksha started in our school, I noticed the change quickly. Girls started asking more questions. Some even stayed back after class to discuss safety, harassment, or how to convince their parents to let them study longer.",
     program: "Teacher Partner, Dhanbad",
-    img: "https://randomuser.me/api/portraits/men/77.jpg",
+    img: test,
   },
   {
     name: "Puja Kumari",
@@ -52,7 +53,7 @@ const testimonials = [
     quote:
       "Even with a degree, I didn’t feel ready. The skill training from Saksham Nari gave me more than just technical knowledge — it gave me confidence. Today, I manage online marketing for two small brands and teach younger girls how to do it too.",
     program: "Graduate & Mentor, Saksham Nari",
-    img: "https://randomuser.me/api/portraits/women/63.jpg",
+    img: test,  
   },
   {
     name: "Dr. Preeti Das",
@@ -60,7 +61,7 @@ const testimonials = [
     quote:
       "Working with Swasthya Sakhi reminded me why I became a doctor. We meet women who’ve never had a health check-up in their life. When they finally speak about their pain, their stress, or their depression — you realize healthcare isn’t just treatment, it’s listening.",
     program: "Volunteer Doctor, Health Camps",
-    img: "https://randomuser.me/api/portraits/women/66.jpg",
+    img: test,
   },
   {
     name: "Jitendra Kumar",
@@ -68,7 +69,7 @@ const testimonials = [
     quote:
       "At Nyay Sakhi, I saw the real world side of the law — not textbooks, but courage. We helped a survivor of domestic violence file her first FIR. I will never forget her relief when the complaint was finally accepted.",
     program: "Paralegal Volunteer, Nyay Sakhi",
-    img: "https://randomuser.me/api/portraits/men/61.jpg",
+    img: test,
   },
   {
     name: "Salma Khatoon",
@@ -76,7 +77,7 @@ const testimonials = [
     quote:
       "During COVID, I lost my job and couldn’t feed my children properly. The hot meals and ration kits from Kanya Jagriti Foundation food program came like a blessing. For people like us, even a packet of rice means survival.",
     program: "Beneficiary, Food Relief Program",
-    img: "https://randomuser.me/api/portraits/women/71.jpg",
+    img: test,
   },
   {
     name: "Amit Rungta",
@@ -84,7 +85,7 @@ const testimonials = [
     quote:
       "I’ve supported many NGOs, but Kanya Jagriti stood out for one reason — transparency and impact. We funded the setup of a Shiksha Jyoti digital classroom. Within few months, students were really happy and ready to learn. That’s real progress.",
     program: "CSR Donor, Shiksha Jyoti Program",
-    img: "https://randomuser.me/api/portraits/men/73.jpg",
+    img: test,
   },
 ];
 
