@@ -1,225 +1,263 @@
+// src/pages/Financial.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, EffectFade } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
+import CountUp from "react-countup";
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/effect-fade";
 
-const slides = [
-  {
-    id: 1,
-    title: "Empowering Rural Entrepreneurs",
-    desc: "Training and mentorship for women to start micro-businesses, self-help groups, and cottage industries.",
-    img: "/assets/finance1.jpg",
-    fallback:
-      "https://images.unsplash.com/photo-1605902711622-cfb43c4437d2?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: 2,
-    title: "Skill Development & Income Growth",
-    desc: "Hands-on workshops on tailoring, handicrafts, food processing, and sustainable livelihoods.",
-    img: "/assets/finance2.jpg",
-    fallback:
-      "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: 3,
-    title: "Financial Literacy for Every Woman",
-    desc: "Building awareness of savings, digital banking, and credit management for long-term stability.",
-    img: "/assets/finance3.jpg",
-    fallback:
-      "https://images.unsplash.com/photo-1612831662375-295c1003d3ca?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: 4,
-    title: "Leadership & Self-Help Groups",
-    desc: "Encouraging collaboration through women-led self-help groups to promote collective growth and resilience.",
-    img: "/assets/finance4.jpg",
-    fallback:
-      "https://images.unsplash.com/photo-1581094794329-c81d3e7b35b0?auto=format&fit=crop&w=1200&q=80",
-  },
-];
+export default function Financial() {
+  const stats = [
+    { label: "Women Empowered", value: 4200 },
+    { label: "Self Help Groups", value: 180 },
+    { label: "Training Sessions", value: 350 },
+    { label: "Entrepreneurs Supported", value: 270 },
+  ];
 
-const features = [
-  {
-    title: "Entrepreneurial Skills",
-    desc: "From idea to enterprise — empowering women to launch and sustain small businesses with local resources.",
-    icon: "💡",
-  },
-  {
-    title: "Financial Literacy",
-    desc: "Workshops on savings, digital payments, budgeting, and responsible credit use to promote smart finances.",
-    icon: "📚",
-  },
-  {
-    title: "Self-Help Groups (SHGs)",
-    desc: "Creating strong community-based networks where women support each other in savings and growth.",
-    icon: "🤝",
-  },
-  {
-    title: "Digital Inclusion",
-    desc: "Promoting access to online banking and fintech tools for transparency, control, and independence.",
-    icon: "💳",
-  },
-  {
-    title: "Microfinance Access",
-    desc: "Linking women entrepreneurs to micro-loans and financial institutions to expand local opportunities.",
-    icon: "🏦",
-  },
-  {
-    title: "Community Leadership",
-    desc: "Encouraging women to take leadership roles in financial decisions, panchayats, and cooperatives.",
-    icon: "🌸",
-  },
-];
+  const initiatives = [
+    {
+      id: "arthik",
+      title: "Arthik Shakti — Financial Independence",
+      summary:
+        "Empowering women to be financially aware, self-reliant, and capable of making independent life choices.",
+      activities: [
+        "Workshops on budgeting & entrepreneurship",
+        "Microfinance & government scheme awareness",
+        "Decision-making & financial confidence sessions",
+        "Mentorship for rural women entrepreneurs",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1605902711622-cfb43c4437d2?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      id: "swavalambi",
+      title: "Swavalambi Saheli — Self Help Groups",
+      summary:
+        "Forming and strengthening women-led SHGs that promote savings, income-generation, and entrepreneurship.",
+      activities: [
+        "Formation & training of SHGs in rural/tribal areas",
+        "Regular savings & group loan systems",
+        "Skill-building for income activities (papad making, stitching, goat rearing)",
+        "Digital finance & mobile banking awareness",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1581094794329-c81d3e7b35b0?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      id: "nari",
+      title: "Nari Utthan — Women Leadership Training",
+      summary:
+        "Building confident women leaders who can manage groups, advocate for rights, and represent their communities effectively.",
+      activities: [
+        "Leadership & confidence-building workshops",
+        "Public speaking & communication training",
+        "Group management & record-keeping",
+        "Exposure visits & mentorship by women role models",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1612831455544-eca2c9b2dbb4?auto=format&fit=crop&w=800&q=80",
+    },
+  ];
 
-const Financial = () => {
+  const gallery = [
+    "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=1400&q=80",
+    "https://images.unsplash.com/photo-1602524203013-5a5e1c14c949?auto=format&fit=crop&w=1400&q=80",
+    "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=1400&q=80",
+    "https://images.unsplash.com/photo-1573497019533-3c09c1b3e8a0?auto=format&fit=crop&w=1400&q=80",
+  ];
+
   return (
-    <div className="relative bg-gradient-to-b from-[#f1fff5] via-[#e0fff1] to-[#f7fff8] overflow-hidden">
-      {/* 🍃 Decorative Background Pattern */}
-      <motion.div
-        className="absolute inset-0 bg-[url('/assets/leaf-pattern.png')] opacity-[0.05] bg-fixed bg-cover z-0"
-        initial={{ backgroundPositionY: 0 }}
-        animate={{ backgroundPositionY: "100%" }}
-        transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
-      ></motion.div>
+    <div className="w-full overflow-hidden bg-linear-to-b from-[#f0fff5] via-[#e8fff0] to-white text-gray-800 relative">
+      <style>{`
+        .kenburns { animation: kb 18s ease-in-out infinite alternate; transform-origin: center; }
+        @keyframes kb { from { transform: scale(1); } to { transform: scale(1.06); } }
 
-      {/* 💰 Header Section */}
-      <motion.section
-        className="relative z-10 text-center py-24 px-4"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h1 className="text-6xl font-extrabold bg-gradient-to-r from-[#2e7d32] via-[#00c853] to-[#aeea00] bg-clip-text text-transparent drop-shadow-md">
-          Financial Independence & Arthik Shakti
-        </h1>
-        <motion.p
-          className="mt-6 text-gray-700 text-lg max-w-4xl mx-auto leading-relaxed font-medium"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 1 }}
-        >
-          <span className="font-semibold text-[#2e7d32]">Arthik Shakti</span> is
-          an initiative by{" "}
-          <span className="font-semibold text-[#009688]">
-            Kanya Jagriti Foundation
-          </span>{" "}
-          to build financially independent, economically confident, and
-          entrepreneurially skilled women across Jharkhand’s rural and tribal
-          regions.
-        </motion.p>
-        <motion.p
-          className="mt-4 text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 1 }}
-        >
-          Women form the backbone of rural economies — yet remain excluded from
-          financial systems and decision-making. Arthik Shakti bridges that gap
-          through knowledge, confidence, and community empowerment.
-        </motion.p>
-      </motion.section>
+        .flip-3d { perspective: 1400px; }
+        .flip-3d-inner { transform-style: preserve-3d; transition: transform 0.7s; height: 400px; }
+        .flip-3d:hover .flip-3d-inner { transform: rotateY(180deg); }
+        .flip-face { backface-visibility: hidden; position: absolute; inset: 0; border-radius: 1rem; overflow: hidden; }
+        .flip-back { transform: rotateY(180deg); }
 
-      {/* 🌀 Swiper Carousel */}
-      <Swiper
-        modules={[Autoplay, Pagination, EffectFade]}
-        autoplay={{ delay: 4500, disableOnInteraction: false }}
-        pagination={{ clickable: true }}
-        effect="fade"
-        className="w-[92%] md:w-[80%] mx-auto rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.15)] overflow-hidden mb-24"
-      >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide.id}>
-            <motion.div
-              className="relative w-full h-[480px] md:h-[600px]"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              <img
-                src={slide.img}
-                onError={(e) => (e.target.src = slide.fallback)}
-                alt={slide.title}
-                className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+        .glass-accent {
+          background: linear-gradient(135deg, rgba(255,255,255,0.62), rgba(255,255,255,0.12));
+          border: 1px solid rgba(255,255,255,0.14);
+          backdrop-filter: blur(6px);
+        }
+      `}</style>
 
-              <motion.div
-                className="absolute bottom-10 left-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 max-w-md"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <h2 className="text-3xl font-semibold text-white drop-shadow-lg">
-                  {slide.title}
-                </h2>
-                <p className="text-gray-100 text-sm mt-3 leading-relaxed">
-                  {slide.desc}
-                </p>
-              </motion.div>
-            </motion.div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {/* HERO SECTION */}
+      <header className="relative z-10">
+        <div className="min-h-[70vh] flex items-center justify-center bg-center bg-cover relative overflow-hidden">
+          <motion.div
+            className="absolute inset-0 kenburns"
+            style={{
+              backgroundImage:
+                "linear-gradient(180deg, rgba(6,30,20,0.4), rgba(255,255,255,0.05)), url('https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=1600&q=80')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+          <motion.div
+            className="text-center relative z-10 max-w-3xl px-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg">
+              Arthik Shakti — Financial Empowerment
+            </h1>
+            <p className="mt-4 text-lg md:text-xl text-emerald-50 font-medium">
+              “Earn. Lead. Rise.” — Empowering women through financial literacy,
+              collective strength, and leadership.
+            </p>
+          </motion.div>
+        </div>
+      </header>
 
-      {/* 🌸 Info Grid */}
-      <section className="relative z-10 max-w-6xl mx-auto px-8 pb-28">
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          {features.map((item, i) => (
+      {/* STATS */}
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 relative z-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {stats.map((s, i) => (
             <motion.div
               key={i}
-              className="group relative bg-gradient-to-br from-[#ffffff]/90 via-[#f1fff8]/80 to-[#e6ffe9]/90 border border-[#b9f6ca] backdrop-blur-xl rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-700"
-              whileHover={{ scale: 1.03 }}
+              className="glass-accent rounded-2xl p-6 text-center shadow-md"
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
             >
-              <div className="p-8 text-center">
-                <div className="text-5xl mb-4">{item.icon}</div>
-                <h3 className="font-bold text-2xl text-[#2e7d32] group-hover:text-[#00c853] transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-gray-700 text-sm mt-3 leading-relaxed">
-                  {item.desc}
-                </p>
+              <div className="text-3xl font-extrabold text-[#1b5e20]">
+                <CountUp end={s.value} duration={2.5} separator="," />
               </div>
+              <div className="mt-2 text-sm text-gray-700">{s.label}</div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </section>
 
-      {/* ✨ Floating Rupee Icons */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        {[...Array(10)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-6 h-6 text-[#00c853] font-bold opacity-20"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-              rotate: Math.random() * 360,
-            }}
-            animate={{
-              y: ["0%", "120%"],
-              rotate: [0, 360],
-            }}
-            transition={{
-              duration: 30 + Math.random() * 10,
-              repeat: Infinity,
-              ease: "linear",
-              delay: Math.random() * 5,
+      {/* CORE INITIATIVES */}
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-16 relative z-20">
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-[#14532d] text-center mb-10"
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          Core Initiatives
+        </motion.h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {initiatives.map((it, idx) => (
+            <motion.article
+              key={it.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.15 }}
+              className="relative"
+            >
+              <div className="flip-3d w-full h-[400px] relative">
+                <div className="flip-3d-inner w-full h-full relative">
+                  {/* FRONT */}
+                  <div className="flip-face bg-white flex flex-col h-full">
+                    <div className="h-48 w-full overflow-hidden">
+                      <img
+                        src={it.image}
+                        alt={it.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-5 flex flex-col justify-center flex-1">
+                      <h3 className="text-lg font-semibold text-[#0b663c] mb-2 leading-snug">
+                        {it.title}
+                      </h3>
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        {it.summary}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* BACK */}
+                  <div className="flip-face flip-back bg-linear-to-br from-emerald-700 to-teal-600 text-white flex flex-col justify-center h-full p-5">
+                    <h4 className="text-lg font-semibold mb-3">
+                      Key Activities
+                    </h4>
+                    <ul className="list-disc list-inside space-y-2 text-sm leading-relaxed">
+                      {it.activities.map((a, j) => (
+                        <li key={j}>{a}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </section>
+
+      {/* GALLERY */}
+      <section className="py-16 bg-linear-to-b from-[#f7fff7] to-[#e8fff0]">
+        <div className="w-full px-4">
+          <motion.h3
+            className="text-3xl font-bold text-[#14532d] text-center mb-10"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+          >
+            Glimpses — Arthik Shakti in Action
+          </motion.h3>
+
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            loop
+            spaceBetween={20}
+            slidesPerView={1.2}
+            breakpoints={{
+              640: { slidesPerView: 1.5 },
+              1024: { slidesPerView: 2.5 },
             }}
           >
-            ₹
-          </motion.div>
-        ))}
-      </div>
+            {gallery.map((src, i) => (
+              <SwiperSlide key={i}>
+                <motion.div
+                  className="relative h-72 md:h-80 rounded-xl overflow-hidden shadow-lg"
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <img
+                    src={src}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute bottom-4 left-4 bg-white/70 backdrop-blur-md py-2 px-3 rounded-lg text-sm font-semibold text-[#0b663c] shadow">
+                    Initiative #{i + 1}
+                  </div>
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 text-center bg-linear-to-b from-emerald-700 to-teal-600 text-white">
+        <motion.h2
+          className="text-4xl font-bold mb-4"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          Join the Movement
+        </motion.h2>
+        <p className="max-w-xl mx-auto mb-8 text-emerald-100">
+          Help women turn potential into prosperity — building a financially
+          independent and inclusive India.
+        </p>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          className="bg-white text-emerald-700 font-bold px-8 py-3 rounded-full shadow-lg"
+        >
+          Get Involved
+        </motion.button>
+      </section>
     </div>
   );
-};
-
-export default Financial;
+}

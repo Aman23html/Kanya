@@ -85,21 +85,30 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center px-5 py-2 md:py-3">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <img
-              src={logo}
-              alt="Kanya Jagriti Foundation"
-              className="w-10 h-10 md:w-12 md:h-12 object-contain drop-shadow-sm"
-            />
-            <div className="flex flex-col leading-none">
-              <span className="text-[1rem] md:text-[1.15rem] font-extrabold text-black group-hover:text-[#FF7F50] transition-colors">
-                KANYA
-              </span>
-              <span className="text-[10px] md:text-[11px] text-gray-700 tracking-[2px] uppercase font-medium">
-                Jagriti Foundation
-              </span>
+           {/* ===== Logo ===== */}
+          <Link
+            to="/"
+            className="flex flex-col items-center text-center group transition-transform duration-300 hover:scale-[1.03]"
+          >
+            <div className="flex items-center gap-1 md:gap-2 animate-fade-in-up">
+              <img
+                src={logo}
+                alt="Kanya Jagriti Foundation Logo"
+                className="w-10 h-10 md:w-12 md:h-12 object-contain drop-shadow-sm"
+              />
+              <div className="flex flex-col leading-none">
+                <span className="text-[1rem] md:text-[1.25rem] font-extrabold text-black tracking-wider group-hover:text-[#FF7F50] transition-colors duration-500">
+                  KANYA
+                </span>
+                <span className="text-[10px] md:text-[11px] text-gray-700 tracking-[2px] uppercase font-medium">
+                  Jagriti Foundation
+                </span>
+              </div>
             </div>
+            <div className="w-[140px] md:w-[180px] border-t border-gray-500 mt-0.5 group-hover:border-[#FF7F50] transition-colors duration-500"></div>
+            <p className="text-[8px] md:text-[10px] italic text-gray-600 mt-0.5">
+              Breaking Barriers, Building Dreams...
+            </p>
           </Link>
 
           {/* Desktop Nav */}
