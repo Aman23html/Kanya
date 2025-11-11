@@ -84,7 +84,7 @@ const Hero = () => {
 
         {/* Overlays */}
         <div className="absolute inset-0 bg-linear-to-b from-black/10 via-black/30 to-black/70 z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0%,rgba(0,0,0,0.4)_100%)] z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-linear(circle_at_center,rgba(255,255,255,0.1)_0%,rgba(0,0,0,0.4)_100%)] z-10 pointer-events-none" />
 
         {/* ===== Text Layer ===== */}
         <motion.div

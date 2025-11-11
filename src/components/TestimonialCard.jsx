@@ -92,7 +92,7 @@ const testimonials = [
 const TestimonialCard = () => {
   return (
     <section className="relative py-24 bg-linear-to-b from-[#e6faf6] via-[#f0fdfa] to-white overflow-hidden">
-      {/* Decorative gradient orbs */}
+      {/* Decorative linear orbs */}
       <div className="absolute top-0 left-0 w-80 h-80 bg-teal-100 blur-[120px] opacity-50 rounded-full"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-200 blur-[140px] opacity-40 rounded-full"></div>
 

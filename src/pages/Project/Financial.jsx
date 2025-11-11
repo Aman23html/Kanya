@@ -80,7 +80,7 @@ export default function Financial() {
         .flip-back { transform: rotateY(180deg); }
 
         .glass-accent {
-          background: linear-gradient(135deg, rgba(255,255,255,0.62), rgba(255,255,255,0.12));
+          background: linear-linear(135deg, rgba(255,255,255,0.62), rgba(255,255,255,0.12));
           border: 1px solid rgba(255,255,255,0.14);
           backdrop-filter: blur(6px);
         }
@@ -93,7 +93,7 @@ export default function Financial() {
             className="absolute inset-0 kenburns"
             style={{
               backgroundImage:
-                "linear-gradient(180deg, rgba(6,30,20,0.4), rgba(255,255,255,0.05)), url('https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=1600&q=80')",
+                "linear-linear(180deg, rgba(6,30,20,0.4), rgba(255,255,255,0.05)), url('https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=1600&q=80')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}

@@ -25,17 +25,17 @@ const mediaData = [
 
 const Media = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#e6faf6] via-[#f0fdfa] to-white">
-      {/* ===== Animated Gradient Background Layers ===== */}
+    <section className="relative overflow-hidden bg-linear-to-b from-[#e6faf6] via-[#f0fdfa] to-white">
+      {/* ===== Animated linear Background Layers ===== */}
       <motion.div
         animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-0 left-0 w-[30rem] h-[30rem] bg-gradient-to-tr from-[#99f6e4] to-[#a7f3d0] blur-[120px] opacity-40 rounded-full"
+        className="absolute top-0 left-0 w-[30rem] h-[30rem] bg-linear-to-tr from-[#99f6e4] to-[#a7f3d0] blur-[120px] opacity-40 rounded-full"
       />
       <motion.div
         animate={{ y: [0, -25, 0], x: [0, -15, 0] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-0 right-0 w-[36rem] h-[36rem] bg-gradient-to-tr from-[#c7f9cc] to-[#e0f7fa] blur-[150px] opacity-50 rounded-full"
+        className="absolute bottom-0 right-0 w-[36rem] h-[36rem] bg-linear-to-tr from-[#c7f9cc] to-[#e0f7fa] blur-[150px] opacity-50 rounded-full"
       />
 
       {/* ===== Hero Section (Top Visual Intro) ===== */}
@@ -47,7 +47,7 @@ const Media = () => {
           transition={{ duration: 0.8 }}
           className="md:w-1/2 text-center md:text-left"
         >
-          <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#006a6a] to-[#00c9a7] drop-shadow-lg">
+          <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight text-transparent bg-clip-text bg-linear-to-r from-[#006a6a] to-[#00c9a7] drop-shadow-lg">
             Empowering <span className="text-[#00bfa6]">Communities</span> Through Compassion & Change
           </h1>
           <p className="text-gray-700 text-lg mt-6 max-w-xl leading-relaxed">
@@ -58,7 +58,7 @@ const Media = () => {
           <motion.button
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-8 bg-gradient-to-r from-[#00c9a7] to-[#00bfa6] text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-[0_0_25px_#00c9a7] transition-all duration-500"
+            className="mt-8 bg-linear-to-r from-[#00c9a7] to-[#00bfa6] text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-[0_0_25px_#00c9a7] transition-all duration-500"
           >
             Explore Media
           </motion.button>
@@ -81,7 +81,7 @@ const Media = () => {
             <motion.div
               animate={{ opacity: [0.4, 0.8, 0.4] }}
               transition={{ duration: 6, repeat: Infinity }}
-              className="absolute inset-0 bg-gradient-to-tr from-[#00bfa6]/30 to-transparent rounded-[2rem]"
+              className="absolute inset-0 bg-linear-to-tr from-[#00bfa6]/30 to-transparent rounded-[2rem]"
             />
           </div>
         </motion.div>
@@ -95,7 +95,7 @@ const Media = () => {
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className={`rounded-[2.5rem] p-12 bg-gradient-to-br ${section.color} shadow-[0_15px_50px_-10px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_70px_-10px_rgba(0,0,0,0.25)] backdrop-blur-sm transition-all duration-700`}
+            className={`rounded-[2.5rem] p-12 bg-linear-to-br ${section.color} shadow-[0_15px_50px_-10px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_70px_-10px_rgba(0,0,0,0.25)] backdrop-blur-sm transition-all duration-700`}
           >
             {/* Title */}
             <div className="text-center mb-10">
@@ -126,7 +126,7 @@ const Media = () => {
                     alt="project"
                     className="w-full h-72 object-cover transform group-hover:scale-110 transition-all duration-[1200ms]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 flex items-end justify-center transition-all duration-700">
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 flex items-end justify-center transition-all duration-700">
                     <p className="text-white text-sm sm:text-base mb-6 px-4 text-center tracking-wide">
                       Empowering lives through action and awareness.
                     </p>

@@ -10,6 +10,7 @@ import Testimonials from "./pages/Testimonials";
 import Media from "./pages/Media";
 import Contact from "./pages/Contact";
 import Donate from "./pages/Donate";
+import Terms from "./pages/Terms";
 
 // Individual Project Pages
 import YoungGirlsEmpowerment from "./pages/Project/YoungGirl";
@@ -22,6 +23,10 @@ import VolunteerEngagementProgram from "./pages/Project/Volunteer";
 import MothersWellnessCare from "./pages/Project/Mother";
 
 import "./App.css";
+import Privacy from "./pages/Privacy";
+import DonerData from "./pages/Donation/DonerData";
+import Bill from "./pages/Donation/Bill";
+import Success from "./pages/Donation/Success";
 
 // 🌀 Scroll to top when navigating
 const ScrollToTop = () => {
@@ -49,6 +54,13 @@ function App() {
           <Route path="/media" element={<Media />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/donate" element={<Donate />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/donerdata" element={<DonerData />} />
+          <Route path="/bill" element={<Bill />} />
+          <Route path="/success" element={<Success />} />
+
+
 
           {/* 🌿 Project Pages */}
           <Route path="/projects/young-girls-empowerment" element={<YoungGirlsEmpowerment />} />

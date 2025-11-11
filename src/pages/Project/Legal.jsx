@@ -10,7 +10,7 @@ import "swiper/css/effect-fade";
 
 /**
  * LegalHelp — Nari Nyay Sashaktikaran
- * - Cinematic hero (Ken Burns + gradient overlay)
+ * - Cinematic hero (Ken Burns + linear overlay)
  * - Vision & quote card
  * - Impact Stats
  * - Ken Burns Swiper hero gallery
@@ -48,7 +48,7 @@ export default function LegalHelp() {
         @keyframes khKb { from { transform: scale(1) translateY(0); } to { transform: scale(1.06) translateY(-1.8%); } }
 
         .glass-accent {
-          background: linear-gradient(135deg, rgba(255,255,255,0.72), rgba(255,255,255,0.15));
+          background: linear-linear(135deg, rgba(255,255,255,0.72), rgba(255,255,255,0.15));
           border: 1px solid rgba(255,255,255,0.18);
           backdrop-filter: blur(8px);
         }
@@ -72,7 +72,7 @@ export default function LegalHelp() {
               left: `${(i * 9 + 7) % 100}%`,
               width: 18 + (i % 5) * 12,
               height: 18 + (i % 5) * 12,
-              background: "radial-gradient(circle at 30% 30%, rgba(37,99,235,0.2), rgba(56,189,248,0.08))",
+              background: "radial-linear(circle at 30% 30%, rgba(37,99,235,0.2), rgba(56,189,248,0.08))",
             }}
             initial={{ y: -200 - Math.random() * 600, rotate: Math.random() * 360 }}
             animate={{ y: 900 + Math.random() * 400, rotate: 360 }}
@@ -90,7 +90,7 @@ export default function LegalHelp() {
             transition={{ duration: 36, repeat: Infinity, ease: "easeInOut" }}
             style={{
               backgroundImage:
-                "linear-gradient(180deg, rgba(37,99,235,0.25), rgba(255,255,255,0.08)), url('https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=1600&q=80')",
+                "linear-linear(180deg, rgba(37,99,235,0.25), rgba(255,255,255,0.08)), url('https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=1600&q=80')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               filter: "contrast(0.95) saturate(0.9)",

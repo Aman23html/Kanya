@@ -124,7 +124,7 @@ export default function OurProjects() {
                     alt={proj.title}
                     className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700 ease-out"
                   />
-                  {/* Subtle overlay gradient */}
+                  {/* Subtle overlay linear */}
                   <div className="absolute inset-0 bg-linear-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
                 </div>
 

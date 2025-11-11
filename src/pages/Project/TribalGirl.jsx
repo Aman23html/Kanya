@@ -102,7 +102,7 @@ export default function TribalGirl() {
 
         /* glass accent */
         .glass-accent {
-          background: linear-gradient(135deg, rgba(255,255,255,0.62), rgba(255,255,255,0.12));
+          background: linear-linear(135deg, rgba(255,255,255,0.62), rgba(255,255,255,0.12));
           border: 1px solid rgba(255,255,255,0.14);
           backdrop-filter: blur(6px);
         }
@@ -136,7 +136,7 @@ export default function TribalGirl() {
         })}
       </div>
 
-      {/* HERO — cinematic with slow zoom + animated gradient overlay */}
+      {/* HERO — cinematic with slow zoom + animated linear overlay */}
       <header className="relative z-10">
         <div className="min-h-[72vh] flex items-center justify-center bg-fixed bg-center bg-cover relative overflow-hidden">
           <motion.div
@@ -147,7 +147,7 @@ export default function TribalGirl() {
             aria-hidden
             style={{
               backgroundImage:
-                "linear-gradient(180deg, rgba(6,30,20,0.28), rgba(255,255,255,0.04)), url('https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=1600&q=80')",
+                "linear-linear(180deg, rgba(6,30,20,0.28), rgba(255,255,255,0.04)), url('https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=1600&q=80')",
               backgroundPosition: "center",
               backgroundSize: "cover",
               filter: "saturate(0.96) contrast(0.98)",
@@ -159,7 +159,7 @@ export default function TribalGirl() {
             animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
             transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
             style={{
-              background: "linear-gradient(120deg, rgba(40,100,50,0.04), rgba(160,220,130,0.03))",
+              background: "linear-linear(120deg, rgba(40,100,50,0.04), rgba(160,220,130,0.03))",
               mixBlendMode: "screen",
             }}
             aria-hidden

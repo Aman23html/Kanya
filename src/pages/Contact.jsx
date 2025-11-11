@@ -47,7 +47,7 @@ const Contact = () => {
         className="relative h-[60vh] flex items-center justify-center bg-cover bg-center"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(5,60,20,0.6), rgba(5,60,20,0.5)), url('https://images.unsplash.com/photo-1581092334703-1250c7cceac1?auto=format&fit=crop&w=1600&q=80')",
+            "linear-linear(rgba(5,60,20,0.6), rgba(5,60,20,0.5)), url('https://images.unsplash.com/photo-1581092334703-1250c7cceac1?auto=format&fit=crop&w=1600&q=80')",
         }}
       >
         <motion.div

@@ -10,7 +10,7 @@ import "swiper/css/effect-fade";
 
 /**
  * Enhanced Jeevan Aadhar — Food & Clothing page
- * - cinematic hero with animated gradient + slow background zoom
+ * - cinematic hero with animated linear + slow background zoom
  * - floating elements (parallax leaves)
  * - glassmorphism stat cards with CountUp
  * - interactive flip cards for initiatives
@@ -136,7 +136,7 @@ export default function FoodClothing() {
 
         /* subtle glass border accent */
         .glass-accent {
-          background: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,255,255,0.12));
+          background: linear-linear(135deg, rgba(255,255,255,0.55), rgba(255,255,255,0.12));
           border: 1px solid rgba(255,255,255,0.18);
           backdrop-filter: blur(6px);
         }
@@ -182,21 +182,21 @@ export default function FoodClothing() {
             aria-hidden
             style={{
               backgroundImage:
-                "linear-gradient(180deg, rgba(6, 30, 20, 0.32), rgba(255,255,255,0.08)), url('https://images.unsplash.com/photo-1600456899121-9b247fae2cfc?auto=format&fit=crop&w=1600&q=80')",
+                "linear-linear(180deg, rgba(6, 30, 20, 0.32), rgba(255,255,255,0.08)), url('https://images.unsplash.com/photo-1600456899121-9b247fae2cfc?auto=format&fit=crop&w=1600&q=80')",
               backgroundPosition: "center",
               backgroundSize: "cover",
               filter: "saturate(0.95) contrast(0.98)",
             }}
           />
 
-          {/* subtle animated gradient overlay */}
+          {/* subtle animated linear overlay */}
           <motion.div
             className="absolute inset-0"
             animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
             style={{
               background:
-                "linear-gradient(120deg, rgba(30,90,40,0.06), rgba(140,200,120,0.03))",
+                "linear-linear(120deg, rgba(30,90,40,0.06), rgba(140,200,120,0.03))",
               mixBlendMode: "screen",
             }}
             aria-hidden

@@ -76,7 +76,7 @@ export default function Mother() {
         .flip-back { transform: rotateY(180deg); }
 
         .glass-card {
-          background: linear-gradient(135deg, rgba(255,255,255,0.65), rgba(255,255,255,0.15));
+          background: linear-linear(135deg, rgba(255,255,255,0.65), rgba(255,255,255,0.15));
           border: 1px solid rgba(255,255,255,0.2);
           backdrop-filter: blur(10px);
         }
@@ -89,7 +89,7 @@ export default function Mother() {
             className="absolute inset-0 kenburns"
             style={{
               backgroundImage:
-                "linear-gradient(180deg, rgba(10,30,10,0.5), rgba(255,255,255,0.08)), url('https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1600&q=80')",
+                "linear-linear(180deg, rgba(10,30,10,0.5), rgba(255,255,255,0.08)), url('https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1600&q=80')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}

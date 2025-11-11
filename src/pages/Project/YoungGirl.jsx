@@ -133,7 +133,7 @@ export default function YoungGirl() {
         .flip-face { backface-visibility: hidden; }
         .flip-back { transform: rotateY(180deg); }
         .glass-accent {
-          background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.15));
+          background: linear-linear(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.15));
           border: 1px solid rgba(255,255,255,0.2);
           backdrop-filter: blur(8px);
         }
@@ -149,7 +149,7 @@ export default function YoungGirl() {
               left: `${(i * 9 + 7) % 100}%`,
               width: 18 + (i % 5) * 12,
               height: 18 + (i % 5) * 12,
-              background: "radial-gradient(circle at 30% 30%, rgba(34,197,94,0.25), rgba(16,185,129,0.08))",
+              background: "radial-linear(circle at 30% 30%, rgba(34,197,94,0.25), rgba(16,185,129,0.08))",
             }}
             initial={{ y: -200 - Math.random() * 600, rotate: Math.random() * 360 }}
             animate={{ y: 900 + Math.random() * 400, rotate: 360 }}
@@ -167,7 +167,7 @@ export default function YoungGirl() {
             transition={{ duration: 36, repeat: Infinity, ease: "easeInOut" }}
             style={{
               backgroundImage:
-                "linear-gradient(180deg, rgba(20,83,45,0.22), rgba(255,255,255,0.08)), url('https://images.unsplash.com/photo-1531182127180-1c17c2f6fe1b?auto=format&fit=crop&w=1600&q=80')",
+                "linear-linear(180deg, rgba(20,83,45,0.22), rgba(255,255,255,0.08)), url('https://images.unsplash.com/photo-1531182127180-1c17c2f6fe1b?auto=format&fit=crop&w=1600&q=80')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               filter: "contrast(0.95) saturate(0.9)",

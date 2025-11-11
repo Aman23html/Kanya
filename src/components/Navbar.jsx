@@ -138,7 +138,7 @@ const Navbar = () => {
               </div>
 
               <div
-                className={`absolute top-full left-0 bg-white shadow-lg rounded-xl border border-gray-100 mt-2 transition-all duration-300 overflow-hidden z-50 ${
+                className={`absolute w-[200px] top-full left-0 bg-white shadow-lg rounded-xl border border-gray-100 mt-2 transition-all duration-300 overflow-hidden z-50 ${
                   projectOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-3 invisible"
                 }`}
               >
@@ -146,7 +146,7 @@ const Navbar = () => {
                   <Link
                     key={i}
                     to={item.path}
-                    className="block px-5 py-2 text-sm text-gray-700 hover:bg-[#fff2ed] hover:text-[#FF7F50] transition-all"
+                    className="block px-5  py-2 text-sm text-gray-700 hover:bg-[#fff2ed] hover:text-[#FF7F50] transition-all"
                   >
                     {item.name}
                   </Link>
