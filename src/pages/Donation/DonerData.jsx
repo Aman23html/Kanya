@@ -23,15 +23,28 @@ const DonorData = () => {
   const [errors, setErrors] = useState({});
   const [showErrorMsg, setShowErrorMsg] = useState(false);
 
-  // 🧩 Validate before submitting
+  // 🔍 Validate before submitting
   const validateForm = () => {
     const newErrors = {};
     Object.entries(form).forEach(([key, value]) => {
-      // PAN is optional (skip check)
       if (key !== "pan" && !value.trim()) {
         newErrors[key] = "This field is required";
       }
     });
+
+    // Extra format validations
+    if (form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
+      newErrors.email = "Enter a valid email address";
+
+    if (form.mobile && !/^\d{10}$/.test(form.mobile))
+      newErrors.mobile = "Enter a valid 10-digit mobile number";
+
+    if (form.pincode && !/^\d{6}$/.test(form.pincode))
+      newErrors.pincode = "Enter a valid 6-digit PIN code";
+
+    if (form.amount && isNaN(form.amount))
+      newErrors.amount = "Enter a valid donation amount";
+
     return newErrors;
   };
 
@@ -50,13 +63,13 @@ const DonorData = () => {
       return;
     }
 
-    // All good — navigate to bill
+    // ✅ All good → navigate to bill
     navigate("/bill", { state: { donorData: form } });
   };
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#e6faf6] via-[#f0fdfa] to-white min-h-screen flex items-center justify-center py-20 px-6">
-      {/* Background animation */}
+      {/* Floating gradient orbs */}
       <motion.div
         animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
         transition={{ duration: 10, repeat: Infinity }}
@@ -68,12 +81,12 @@ const DonorData = () => {
         className="absolute bottom-0 right-0 w-[36rem] h-[36rem] bg-gradient-to-tr from-[#c7f9cc] to-[#e0f7fa] blur-[150px] opacity-50 rounded-full"
       />
 
-      {/* Form card */}
+      {/* Glassmorphic Form Card */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 max-w-2xl w-full bg-white/60 backdrop-blur-xl shadow-2xl rounded-3xl p-10"
+        className="relative z-10 max-w-2xl w-full bg-white/60 backdrop-blur-xl shadow-2xl rounded-3xl p-10 border border-white/40"
       >
         <h2 className="text-3xl font-bold text-[#004f4f] text-center mb-8">
           Donor Details
@@ -85,14 +98,16 @@ const DonorData = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-red-600 text-center mb-6 font-medium"
           >
-            ⚠️ Please fill out all required fields before continuing.
+            ⚠️ Please fill all required fields correctly before continuing.
           </motion.p>
         )}
 
         <form className="space-y-5" onSubmit={handleSubmit}>
           {/* Purpose Dropdown */}
           <div>
-            <label className="block text-gray-700 mb-2">Purpose <span className="text-red-500">*</span></label>
+            <label className="block text-gray-700 mb-2">
+              Purpose <span className="text-red-500">*</span>
+            </label>
             <select
               name="purpose"
               value={form.purpose}
@@ -106,10 +121,12 @@ const DonorData = () => {
               <option value="Women Empowerment">Women Empowerment</option>
               <option value="Tribal Welfare">Tribal Welfare</option>
             </select>
-            {errors.purpose && <p className="text-red-500 text-sm mt-1">{errors.purpose}</p>}
+            {errors.purpose && (
+              <p className="text-red-500 text-sm mt-1">{errors.purpose}</p>
+            )}
           </div>
 
-          {/* Input fields */}
+          {/* Dynamic Input Fields */}
           {[
             ["name", "Legal name"],
             ["address", "Full postal address"],
@@ -126,7 +143,15 @@ const DonorData = () => {
                 {field !== "pan" && <span className="text-red-500"> *</span>}
               </label>
               <input
-                type={field === "dob" ? "date" : field === "email" ? "email" : "text"}
+                type={
+                  field === "dob"
+                    ? "date"
+                    : field === "email"
+                    ? "email"
+                    : field === "amount"
+                    ? "number"
+                    : "text"
+                }
                 name={field}
                 value={form[field]}
                 onChange={handleChange}
@@ -135,7 +160,9 @@ const DonorData = () => {
                 } bg-white/70 focus:ring-2 focus:ring-[#00c9a7]`}
                 placeholder={`Enter your ${label}`}
               />
-              {errors[field] && <p className="text-red-500 text-sm mt-1">{errors[field]}</p>}
+              {errors[field] && (
+                <p className="text-red-500 text-sm mt-1">{errors[field]}</p>
+              )}
             </div>
           ))}
 

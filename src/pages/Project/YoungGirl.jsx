@@ -178,11 +178,11 @@ export default function YoungGirl() {
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-linear-to-r from-green-700 via-emerald-600 to-teal-500">
               Young Girls Empowerment
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
-              <span className="font-semibold text-white">Kanya Shakti</span> — building confident, educated, and self-reliant girls who uplift generations.
+            <p className="mt-6 text-lg md:text-xl text-green-900 max-w-3xl mx-auto">
+              <span className="font-semibold text-shadow-green-700">Kanya Shakti</span> — building confident, educated, and self-reliant girls who uplift generations.
             </p>
             <motion.div
-              className="mt-8 inline-block max-w-2xl mx-auto bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-white shadow-lg"
+              className="mt-8 inline-block max-w-2xl mx-auto bg-white/10 backdrop-blur-md border border-white/40 rounded-2xl p-6 text-green-600 shadow-xl shadow-emerald-95000"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
             >
@@ -193,7 +193,7 @@ export default function YoungGirl() {
               <a href="#join" className="px-6 py-3 rounded-full bg-linear-to-r from-green-600 to-emerald-500 text-white font-semibold shadow hover:scale-95 transition">
                 Get Involved
               </a>
-              <a href="#programs" className="px-6 py-3 rounded-full border border-white/40 text-white bg-white/10 hover:bg-white/20 transition">
+              <a href="#programs" className="px-6 py-3 rounded-full border border-black/40 text-green-950 bg-white/30 hover:bg-white/20 transition">
                 Explore Programs
               </a>
             </div>

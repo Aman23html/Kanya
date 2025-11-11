@@ -88,7 +88,7 @@ const Navbar = () => {
            {/* ===== Logo ===== */}
           <Link
             to="/"
-            className="flex flex-col items-center text-center group transition-transform duration-300 hover:scale-[1.03]"
+            className="flex flex-col items-center group transition-transform duration-300 hover:scale-[1.03]"
           >
             <div className="flex items-center gap-1 md:gap-2 animate-fade-in-up">
               <img
@@ -96,8 +96,8 @@ const Navbar = () => {
                 alt="Kanya Jagriti Foundation Logo"
                 className="w-10 h-10 md:w-12 md:h-12 object-contain drop-shadow-sm"
               />
-              <div className="flex flex-col leading-none">
-                <span className="text-[1rem] md:text-[1.25rem] font-extrabold text-black tracking-wider group-hover:text-[#FF7F50] transition-colors duration-500">
+              <div className="flex flex-col  leading-none ">
+                <span className="text-[1.5rem] md:text-[1.25rem] font-extrabold text-black tracking-wider group-hover:text-[#FF7F50] transition-colors duration-500 ">
                   KANYA
                 </span>
                 <span className="text-[10px] md:text-[11px] text-gray-700 tracking-[2px] uppercase font-medium">
@@ -127,7 +127,7 @@ const Navbar = () => {
               onMouseLeave={() => setProjectOpen(false)}
             >
               <div className="flex items-center gap-1 cursor-pointer group text-[#004f4f] hover:text-[#FF7F50]">
-                <Link to="/projects" className="hover:text-[#FF7F50]">
+                <Link to="" className="hover:text-[#FF7F50]">
                   Projects
                 </Link>
                 <IoIosArrowDown

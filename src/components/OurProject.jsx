@@ -72,37 +72,41 @@ export default function OurProjects() {
       id="projects"
       className="relative py-8 sm:py-10 bg-linear-to-b from-[#f9fcfd] to-[#ecf7f5] overflow-hidden"
     >
-      {/* Soft glowing backgrounds */}
-      <div className="absolute -top-10 left-1/3 w-72 h-72 bg-[#88d1c3]/20 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-0 right-20 w-72 h-72 bg-[#ffb6b6]/25 rounded-full blur-3xl -z-10"></div>
+      {/* Decorative Glows */}
+      <div className="absolute -top-10 left-1/3 w-64 h-64 bg-[#88d1c3]/25 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 right-20 w-64 h-64 bg-[#ffb6b6]/30 rounded-full blur-3xl -z-10"></div>
 
-      {/* Section heading */}
+      {/* Section Heading */}
       <motion.h3
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true }}
-        className="text-3xl sm:text-4xl font-bold text-center text-[#006666] mb-14"
+        viewport={{ once: false, amount: 0.2 }}
+        className="text-3xl sm:text-4xl font-extrabold text-center text-[#006666] mb-10 tracking-wide"
       >
-        Our Projects
+        Our <span className="text-[#FF7F50]">Projects</span>
+        <div className="w-16 h-[3px] bg-[#FF7F50]/60 mx-auto mt-2 rounded-full"></div>
       </motion.h3>
 
       {/* Swiper Carousel */}
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4">
         <Swiper
           slidesPerView={1}
-          spaceBetween={40}
+          spaceBetween={30}
           loop
           centeredSlides
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
+          autoplay={{ delay: 3500, disableOnInteraction: false }}
+          pagination={{
+            clickable: true,
+            el: ".custom-pagination",
+          }}
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
           modules={[Pagination, Autoplay]}
-          className="pb-12"
+          className="pb-10"
         >
           {projects.map((proj, i) => (
             <SwiperSlide key={i}>
@@ -110,27 +114,26 @@ export default function OurProjects() {
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
+                viewport={{ once: false, amount: 0.3 }}
                 whileHover={{
                   scale: 1.05,
-                  y: -5,
-                  transition: { type: "spring", stiffness: 200, damping: 14 },
+                  transition: { type: "spring", stiffness: 150, damping: 10 },
                 }}
-                className="group bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500"
+                className="group bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500"
               >
-                {/* Image Section */}
-                <div className="relative w-full h-64 overflow-hidden">
+                {/* Image */}
+                <div className="relative w-full h-60 overflow-hidden">
                   <img
                     src={proj.img}
                     alt={proj.title}
-                    className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                   />
-                  {/* Subtle overlay linear */}
-                  <div className="absolute inset-0 bg-linear-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-700"></div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h4 className="text-lg sm:text-xl font-semibold text-[#004b4b] mb-3 group-hover:text-[#ff7f50] transition-colors duration-300">
+                <div className="p-5">
+                  <h4 className="text-lg sm:text-xl font-semibold text-[#004b4b] mb-3 group-hover:text-[#FF7F50] transition-colors duration-300">
                     {proj.title}
                   </h4>
                   <p className="text-gray-700 text-sm leading-relaxed">
@@ -141,6 +144,9 @@ export default function OurProjects() {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Pagination Dots */}
+        <div className="custom-pagination flex justify-center mt-4 space-x-2 [&_.swiper-pagination-bullet]:bg-green-400! [&_.swiper-pagination-bullet-active]:!bg-[#FF7F50]! [&_.swiper-pagination-bullet]:w-3! [&_.swiper-pagination-bullet]:h-3! [&_.swiper-pagination-bullet]:rounded-full!"></div>
       </div>
     </section>
   );
