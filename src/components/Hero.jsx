@@ -89,7 +89,7 @@ const Hero = () => {
         </Swiper>
 
         {/* Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/80 z-10" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/10 via-black/40 to-black/80 z-10" />
 
         {/* ===== Text Layer ===== */}
         <motion.div
@@ -99,7 +99,7 @@ const Hero = () => {
         >
           <motion.h1
             variants={fadeUp}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] max-w-5xl"
+            className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] max-w-5xl"
           >
             KANYA JAGRITI FOUNDATION
           </motion.h1>
@@ -107,7 +107,7 @@ const Hero = () => {
           <motion.p
             variants={fadeUp}
             custom={1}
-            className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl lg:text-2xl italic text-[#ffe8ee] drop-shadow-md max-w-2xl"
+            className="mt-3 sm:mt-1 text-base sm:text-lg md:text-xl lg:text-2xl italic text-[#ffe8ee] drop-shadow-md max-w-2xl"
           >
             “Breaking Barriers, Building Dreams…”
           </motion.p>
@@ -115,7 +115,7 @@ const Hero = () => {
           <motion.div
             variants={fadeUp}
             custom={2}
-            className="mt-8 sm:mt-10 flex flex-wrap justify-center gap-4 sm:gap-5"
+            className="mt-2 sm:mt-5 lg:mt-5 flex flex-wrap justify-center gap-4 sm:gap-5"
           >
             <Link
               to="/donate"
@@ -137,7 +137,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="absolute bottom-2 sm:bottom-8 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200 px-4 sm:px-6 md:px-8 py-5 sm:py-6 w-[92%] sm:w-[80%] md:w-[60%] z-30"
+          className="absolute bottom-2 sm:bottom-6 lg:bottom-12 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200 px-4 sm:px-6 md:px-8 py-5 sm:py-6 w-[92%] sm:w-[80%] md:w-[60%] z-30"
         >
           <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#007c7c] mb-3 sm:mb-4 text-left">
             Food Relief Fund
