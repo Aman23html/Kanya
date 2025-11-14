@@ -1,50 +1,80 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Sparkles, HeartHandshake, Users, Leaf } from "lucide-react";
 
 const Volunteer = () => {
   const cards = [
     {
-      image: "https://images.unsplash.com/photo-1593113598332-cd7f0e22b5b5?auto=format&fit=crop&w=800&q=80",
+      icon: <HeartHandshake className="w-10 h-10 text-lime-300" />,
+      image:
+        "https://images.unsplash.com/photo-1593113598332-cd7f0e22b5b5?auto=format&fit=crop&w=900&q=80",
       title: "Meaningful Engagement",
-      desc: "Engage volunteers in impactful roles supporting Kanya Jagriti’s initiatives like gender justice, education, and environment.",
+      desc: "Empower volunteers with purposeful roles supporting education, gender justice, and environment.",
     },
     {
-      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
+      icon: <Users className="w-10 h-10 text-lime-300" />,
+      image:
+        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
       title: "Leadership & Empathy",
-      desc: "Develop leadership, empathy, and social awareness among youth through structured volunteering programs.",
+      desc: "Build leadership, empathy, and social awareness through immersive volunteer experiences.",
     },
     {
-      image: "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=800&q=80",
+      icon: <Leaf className="w-10 h-10 text-lime-300" />,
+      image:
+        "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=900&q=80",
       title: "Urban–Rural Bridge",
-      desc: "Bridge the gap between urban resources and rural realities through mentorship and innovative outreach.",
+      desc: "Connect urban strengths with rural needs through innovative outreach initiatives.",
     },
     {
-      image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=800&q=80",
+      icon: <Sparkles className="w-10 h-10 text-lime-300" />,
+      image:
+        "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=900&q=80",
       title: "Impact Tracking",
-      desc: "Use data-driven systems to track social impact, recognize volunteers’ efforts, and inspire consistent participation.",
+      desc: "Leverage smart systems to track impact, reward efforts & scale volunteerism.",
     },
     {
-      image: "https://images.unsplash.com/photo-1542144612-1bf94e3eec8e?auto=format&fit=crop&w=800&q=80",
+      icon: <HeartHandshake className="w-10 h-10 text-lime-300" />,
+      image:
+        "https://images.unsplash.com/photo-1542144612-1bf94e3eec8e?auto=format&fit=crop&w=900&q=80",
       title: "Culture of Giving",
-      desc: "Foster a lifestyle of compassion, respect, and contribution through a community-driven volunteer movement.",
+      desc: "Inspire a compassionate movement rooted in kindness, respect, and contribution.",
     },
   ];
 
   return (
-    <div className="bg-linear-to-b from-[#fafff8] via-[#e9fdf2] to-[#e6f9ee] text-gray-800 overflow-hidden min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-24 px-6 text-center">
+    <div className="bg-gradient-to-b from-[#fafff8] via-[#e9fdf2] to-[#e6f9ee] text-gray-800 min-h-screen">
+
+      {/* ---------------- HERO SECTION ---------------- */}
+      <section className="relative py-28 px-6 text-center overflow-hidden">
+
+        {/* Glow background */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.6 }}
+          transition={{ duration: 2 }}
+          className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,150,0.25),transparent_70%)]"
+        />
+
+        {/* Floating particles */}
+        <motion.div
+          animate={{ y: [0, -15, 0] }}
+          transition={{ repeat: Infinity, duration: 6 }}
+          className="absolute top-24 right-24 w-20 h-20 bg-green-300/20 rounded-full blur-3xl"
+        />
+
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-5xl md:text-6xl font-extrabold mb-4 bg-linear-to-r from-emerald-600 via-green-500 to-lime-600 text-transparent bg-clip-text"
+          className="text-5xl md:text-6xl font-extrabold mb-4 
+            bg-gradient-to-r from-emerald-600 via-green-500 to-lime-600 
+            text-transparent bg-clip-text"
         >
           Volunteer Engagement Program
         </motion.h1>
 
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
           className="text-2xl italic font-semibold text-emerald-700"
@@ -53,27 +83,20 @@ const Volunteer = () => {
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 1 }}
           className="max-w-3xl mx-auto mt-8 text-lg text-gray-700 leading-relaxed"
         >
-          The vision of this program is to build a movement of socially conscious citizens 
-          who find purpose and pride in serving communities. Volunteering isn’t just service — 
-          it’s transformation. <strong>“Serve. Learn. Inspire.”</strong>
+          Join a movement of socially conscious citizens.  
+          Volunteering isn’t just service — it transforms you.  
+          <strong>“Serve. Learn. Inspire.”</strong>
         </motion.p>
-
-        {/* Glow accent */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.7, scale: 1 }}
-          transition={{ duration: 2 }}
-          className="absolute top-20 left-1/2 -translate-x-1/2 w-120 h-120 bg-linear-to-tr from-green-300/30 to-lime-200/30 rounded-full blur-3xl"
-        />
       </section>
 
-      {/* Pinterest-style Objectives Section */}
+      {/* ---------------- ADVANCED CARD GRID ---------------- */}
       <section className="relative py-20 px-6">
+
         <motion.h3
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -83,47 +106,51 @@ const Volunteer = () => {
           Program Objectives
         </motion.h3>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+
           {cards.map((card, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.85 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="relative overflow-hidden rounded-3xl shadow-lg group break-inside-avoid bg-white"
+              whileHover={{ scale: 1.06 }}
+              className="relative rounded-3xl overflow-hidden group shadow-xl 
+              bg-white/20 backdrop-blur-lg
+              border border-emerald-200
+              hover:shadow-[0_0_45px_10px_rgba(52,211,153,0.45)]
+              transition-all duration-700"
             >
-              <img
-                src={card.image}
-                alt={card.title}
-                className="w-full h-auto rounded-3xl object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-
-              {/* Overlay Hover */}
-              <div className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-emerald-900/80 via-emerald-700/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 p-6">
-                <motion.h4
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-xl font-bold text-lime-200 mb-2"
-                >
-                  {card.title}
-                </motion.h4>
-                <motion.p
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.2, duration: 0.5 }}
-                  className="text-sm text-green-50 leading-relaxed"
-                >
-                  {card.desc}
-                </motion.p>
+              {/* Image */}
+              <div className="overflow-hidden rounded-3xl">
+                <motion.img
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-56 object-cover rounded-3xl"
+                  whileHover={{ scale: 1.12 }}
+                  transition={{ duration: 1.2 }}
+                />
               </div>
 
-              {/* Border Glow on hover */}
-              <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-green-200 transition-all duration-700 group-hover:shadow-[0_0_40px_6px_rgba(52,211,153,0.4)]" />
+              {/* Card Body */}
+              <div className="p-6 relative">
+                <div className="mb-4">{card.icon}</div>
+
+                <h4 className="text-xl font-bold text-emerald-800 mb-2">
+                  {card.title}
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {card.desc}
+                </p>
+              </div>
+
+              {/* Decorative bottom glow */}
+              <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-green-400/40 to-transparent"></div>
             </motion.div>
           ))}
         </div>
       </section>
+
     </div>
   );
 };

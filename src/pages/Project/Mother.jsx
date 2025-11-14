@@ -1,4 +1,4 @@
-// src/pages/Mother.jsx
+// Updated Mother.jsx with improved alignment, colors, and layout
 import React from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -64,9 +64,9 @@ export default function Mother() {
   ];
 
   return (
-    <div className="w-full overflow-hidden bg-linear-to-b from-[#f9fff9] via-[#f0fff5] to-white text-gray-800 relative">
+    <div className="w-full overflow-hidden bg-linear-to-b from-[#f2fff6] via-[#eaffe9] to-white text-gray-800 relative">
       <style>{`
-        .kenburns { animation: kb 20s ease-in-out infinite alternate; transform-origin: center; }
+        .kenburns { animation: kb 22s ease-in-out infinite alternate; transform-origin: center; }
         @keyframes kb { from { transform: scale(1); } to { transform: scale(1.07); } }
 
         .flip-3d { perspective: 1200px; }
@@ -76,9 +76,9 @@ export default function Mother() {
         .flip-back { transform: rotateY(180deg); }
 
         .glass-card {
-          background: linear-linear(135deg, rgba(255,255,255,0.65), rgba(255,255,255,0.15));
-          border: 1px solid rgba(255,255,255,0.2);
-          backdrop-filter: blur(10px);
+          background: linear-gradient(135deg, rgba(255,255,255,0.65), rgba(255,255,255,0.2));
+          border: 1px solid rgba(255,255,255,0.35);
+          backdrop-filter: blur(12px);
         }
       `}</style>
 
@@ -89,7 +89,7 @@ export default function Mother() {
             className="absolute inset-0 kenburns"
             style={{
               backgroundImage:
-                "linear-linear(180deg, rgba(10,30,10,0.5), rgba(255,255,255,0.08)), url('https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1600&q=80')",
+                "linear-gradient(180deg, rgba(0,40,20,0.55), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1600&q=80')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -100,10 +100,10 @@ export default function Mother() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg">
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-xl">
               Matri Sneha — Mothers’ Wellness Care
             </h1>
-            <p className="mt-4 text-lg md:text-xl text-emerald-50 font-medium">
+            <p className="mt-4 text-lg md:text-xl text-emerald-100 font-medium">
               “When a mother thrives, a generation rises.”
             </p>
           </motion.div>
@@ -112,7 +112,7 @@ export default function Mother() {
 
       {/* STATS */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 relative z-20">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((s, i) => (
             <motion.div
               key={i}
@@ -121,10 +121,10 @@ export default function Mother() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
             >
-              <div className="text-3xl font-extrabold text-[#1b5e20]">
+              <div className="text-4xl font-extrabold text-emerald-700">
                 <CountUp end={s.value} duration={2.5} separator="," />
               </div>
-              <div className="mt-2 text-sm text-gray-700">{s.label}</div>
+              <div className="mt-2 text-sm text-gray-700 font-medium">{s.label}</div>
             </motion.div>
           ))}
         </div>
@@ -133,21 +133,21 @@ export default function Mother() {
       {/* INITIATIVES */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-16">
         <motion.h2
-          className="text-3xl md:text-4xl font-bold text-[#155724] text-center mb-10"
+          className="text-3xl md:text-4xl font-bold text-[#0b663c] text-center mb-12"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
         >
           Core Initiatives
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {initiatives.map((it, idx) => (
             <motion.article
               key={it.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.15 }}
-              className="relative h-[420px]"
+              className="relative h-[430px]"
             >
               <div className="flip-3d h-full">
                 <div className="flip-3d-inner relative rounded-3xl shadow-xl h-full">
@@ -162,7 +162,7 @@ export default function Mother() {
                     </div>
                     <div className="p-5 flex-1 flex flex-col justify-between">
                       <div>
-                        <h3 className="text-lg font-semibold text-[#0b663c] mb-2">
+                        <h3 className="text-lg font-semibold text-emerald-700 mb-2">
                           {it.title}
                         </h3>
                         <p className="text-gray-700 text-sm leading-relaxed">{it.summary}</p>
@@ -187,7 +187,7 @@ export default function Mother() {
       </section>
 
       {/* GALLERY */}
-      <section className="py-12 bg-linear-to-b from-[#f7fff7] to-[#e8fff0]">
+      <section className="py-14 bg-linear-to-b from-[#f4fff4] to-[#e6ffef]">
         <div className="w-full px-4">
           <motion.h3
             className="text-3xl font-bold text-[#14532d] text-center mb-10"
@@ -202,22 +202,22 @@ export default function Mother() {
             autoplay={{ delay: 3800, disableOnInteraction: false }}
             pagination={{ clickable: true }}
             loop
-            spaceBetween={16}
+            spaceBetween={20}
             slidesPerView={1.1}
             breakpoints={{
-              640: { slidesPerView: 1.6 },
-              1024: { slidesPerView: 2.8 },
+              640: { slidesPerView: 1.5 },
+              1024: { slidesPerView: 2.6 },
             }}
           >
             {gallery.map((src, i) => (
               <SwiperSlide key={i}>
                 <motion.div
-                  className="relative h-72 md:h-80 rounded-xl overflow-hidden shadow-lg"
-                  whileHover={{ scale: 1.03 }}
-                  transition={{ duration: 0.4 }}
+                  className="relative h-72 md:h-80 rounded-xl overflow-hidden shadow-xl bg-white"
+                  whileHover={{ scale: 1.04 }}
+                  transition={{ duration: 0.45 }}
                 >
                   <img src={src} alt="" className="w-full h-full object-cover" />
-                  <div className="absolute bottom-4 left-4 bg-white/70 backdrop-blur-md py-2 px-3 rounded-lg text-sm font-semibold text-[#0b663c] shadow">
+                  <div className="absolute bottom-4 left-4 bg-white/80 backdrop-blur-md py-2 px-3 rounded-lg text-sm font-semibold text-emerald-700 shadow">
                     Wellness Activity #{i + 1}
                   </div>
                 </motion.div>
@@ -230,18 +230,18 @@ export default function Mother() {
       {/* CTA */}
       <section className="py-16 text-center bg-linear-to-b from-emerald-700 to-teal-600 text-white">
         <motion.h2
-          className="text-4xl font-bold mb-4"
+          className="text-4xl font-bold mb-4 drop-shadow"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
         >
           Support Mothers, Strengthen Generations
         </motion.h2>
-        <p className="max-w-xl mx-auto mb-8 text-emerald-100">
+        <p className="max-w-xl mx-auto mb-8 text-emerald-100 text-lg">
           Join hands to care for those who nurture the world — every mother deserves wellness, dignity, and love.
         </p>
         <motion.button
-          whileHover={{ scale: 1.05 }}
-          className="bg-white text-emerald-700 font-bold px-8 py-3 rounded-full shadow-lg"
+          whileHover={{ scale: 1.07 }}
+          className="bg-white text-emerald-700 font-bold px-10 py-4 rounded-full shadow-lg tracking-wide"
         >
           Get Involved
         </motion.button>

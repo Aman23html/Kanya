@@ -89,7 +89,7 @@ export default function OurProjects() {
       </motion.h3>
 
       {/* Swiper Carousel */}
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4 ">
         <Swiper
           slidesPerView={1}
           spaceBetween={30}

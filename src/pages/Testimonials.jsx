@@ -4,7 +4,7 @@ import TestimonialCard from "../components/TestimonialCard";
 
 const Testimonials = () => {
   return (
-    <section className="container section">
+    <section className=" mt-10">
       <h2>Testimonials</h2>
       <TestimonialCard />
     </section>

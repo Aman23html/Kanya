@@ -19,6 +19,7 @@
   width: 10px;
   height: 10px;
   transition: all 0.3s ease;
+  
 }
 .swiper-pagination-bullet-active {
   background: #ff7f50 !important;
@@ -27,7 +28,7 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-  color: #fff !important;
+  color: #ffff !important;
   transition: all 0.3s ease;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
@@ -36,3 +37,6 @@
   color: #ff7f50 !important;
   transform: scale(1.1);
 }
+
+
+

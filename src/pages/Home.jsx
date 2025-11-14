@@ -101,8 +101,11 @@ export default function Home() {
 
   return (
     <main className="bg-[#fefefe] text-gray-800 overflow-x-hidden">
-      <Hero />
-      <Aboutus />
+      <div>
+        <Hero />
+      </div>
+     <div className=" ">
+       <Aboutus />
 
       <OurProjects />
 
@@ -155,6 +158,7 @@ export default function Home() {
     </a>
   </motion.div>
 </section>
+     </div>
 
 
      

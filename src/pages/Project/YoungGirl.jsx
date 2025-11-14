@@ -7,6 +7,12 @@ import CountUp from "react-countup";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import aware from "../../assets/aware.png";
+import health from "../../assets/health.webp";
+import camp from "../../assets/camp.webp";
+import food from "../../assets/food.webp";
+import mental from "../../assets/mental.webp";
+import Skill from "../../assets/Skill.webp";
 
 export default function YoungGirl() {
   const stats = [
@@ -19,181 +25,277 @@ export default function YoungGirl() {
   const programs = [
     {
       id: "hunar",
-      title: "Hunar Vikas — Skill development",
+      title: "Hunar Vikas — Skill Development",
       objective:
-        "To equip girls with hands-on vocational and digital skills that improve employability, boost confidence, and offer alternative income-generation pathways.",
+        "Empowering girls with practical skills for a sustainable and confident livelihood.",
       activities: [
-        "Tailoring and embroidery",
-        "Handicraft and local art",
-        "Computer literacy and digital training",
-        "Spoken English and communication skills",
-        "Beauty and wellness training",
+        "Tailoring & Embroidery",
+        "Handicrafts & Artistry",
+        "Digital Literacy & Communication",
+        "Beauty & Wellness",
       ],
-      img: "https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&w=1400&q=80",
+      img: Skill,
     },
     {
       id: "udaan",
-      title: "Udaan Camps — Camp and outings",
+      title: "Udaan — Camps & Confidence Building",
       objective:
-        "To expose girls to life beyond their immediate surroundings, helping them develop social confidence, leadership, and emotional intelligence through travel and group activities.",
+        "Helping girls explore the world through travel, exposure, and leadership activities.",
       activities: [
-        "Educational excursions",
-        "Nature camps and treks",
-        "Life skills workshops",
-        "Leadership building activities",
-        "Inter-state cultural exchange programs",
+        "Educational Trips",
+        "Leadership Activities",
+        "Cultural Exchanges",
+        "Outdoor Learning",
       ],
-      img: "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?auto=format&fit=crop&w=1400&q=80",
+      img:camp,
     },
     {
       id: "nipun",
-      title: "Nipun — Training and capacity building",
+      title: "Nipun — Awareness & Capacity Building",
       objective:
-        "To provide targeted training sessions to build girls’ knowledge and awareness around critical life topics, preparing them for future roles in education, employment, and community leadership.",
+        "Training girls to be self-aware, informed, and proactive leaders of tomorrow.",
       activities: [
-        "Legal literacy and rights awareness",
-        "Menstrual hygiene and health education",
-        "Digital safety and cyber awareness",
-        "Social media awareness",
+        "Legal & Digital Literacy",
+        "Health & Hygiene Awareness",
+        "Cyber Safety",
       ],
-      img: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1400&q=80",
+      img: aware,
     },
     {
       id: "meriSathi",
-      title: "Meri Sathi — Mental wellness program",
+      title: "Meri Sathi — Mental Wellness",
       objective:
-        "To ensure emotional and psychological well-being among adolescent girls, who often suffer silently due to societal pressure and lack of support.",
+        "Supporting emotional well-being through creative expression and counseling.",
       activities: [
-        "One-on-one counseling with trained professionals",
-        "Peer support groups",
-        "Stress management workshops",
-        "Art, music, and play therapy",
-        "Safe spaces for expression and healing",
+        "Counseling Sessions",
+        "Art & Music Therapy",
+        "Peer Support Circles",
       ],
-      img: "https://images.unsplash.com/photo-1584697964190-266f9b57b52d?auto=format&fit=crop&w=1400&q=80",
+      img:mental,
     },
     {
       id: "swasthya",
-      title: "Swasthya Saheli — Health awareness program",
+      title: "Swasthya Saheli — Health & Hygiene",
       objective:
-        "To promote health awareness and preventive care among adolescent girls and young women through education and community outreach.",
+        "Promoting healthy habits and preventive care through awareness programs.",
       activities: [
-        "Menstrual hygiene management",
-        "Nutrition education",
-        "Sanitation and clean water workshops",
-        "Regular health check-up camps",
-        "Maternal and reproductive health awareness",
+        "Menstrual Hygiene Education",
+        "Nutrition & Sanitation",
+        "Health Camps",
       ],
-      img: "https://images.unsplash.com/photo-1606761568499-6d2451b23c53?auto=format&fit=crop&w=1400&q=80",
+      img: health,
     },
     {
       id: "shiksha",
-      title: "Shiksha Jyoti — Education and Scholarships",
+      title: "Shiksha Jyoti — Education & Scholarships",
       objective:
-        "To illuminate the path of underprivileged girls through access to quality education, scholarships, and mentorship.",
+        "Providing financial and mentorship support to ensure continuous education.",
       activities: [
-        "Tuition fee support and scholarships",
-        "School and college enrollment assistance",
-        "Learning materials and uniforms",
-        "Digital learning access (smart devices, internet packs)",
-        "Mentorship from educators and role models",
+        "Scholarships & Materials",
+        "Digital Learning Support",
+        "Mentorship Programs",
       ],
       img: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1400&q=80",
     },
     {
       id: "sangini",
-      title: "Sangini — Fooding and Lodging",
+      title: "Sangini — Food & Lodging Support",
       objective:
-        "To provide nutritious meals and safe lodging to underprivileged girls, especially those living far from educational institutions or in vulnerable conditions.",
+        "Providing safe accommodation and nutritious meals for girls pursuing education.",
       activities: [
-        "Daily nutritious meals based on dietary guidelines",
-        "Hygienic, secure hostel facilities",
-        "Sanitation and clean drinking water",
-        "Emergency care and support",
-        "Emotional support and a family-like environment",
+        "Safe Hostel Facilities",
+        "Healthy Meals",
+        "Emergency Support",
       ],
-      img: "https://images.unsplash.com/photo-1590080875832-8408be7a59f1?auto=format&fit=crop&w=1400&q=80",
+      img: food,
     },
   ];
 
   return (
-    <div className="w-full overflow-hidden bg-linear-to-b from-[#f0fff4] via-[#ecfdf5] to-white text-gray-800 relative">
+    <div className="relative w-full overflow-hidden bg-gradient-to-b from-[#f0fff4] via-[#ecfdf5] to-white text-gray-800 mt-10">
       <style>{`
-        .kenburns {
-          transform-origin: center;
-          animation: ygKb 20s ease-in-out infinite alternate;
+        /* Floating Particles */
+        .particle {
+          position: absolute;
+          border-radius: 50%;
+          opacity: 0.2;
+          background: radial-gradient(circle, rgba(34,197,94,0.5), rgba(16,185,129,0.1));
+          filter: blur(1px);
         }
-        @keyframes ygKb {
-          from { transform: scale(1) translateY(0); }
-          to { transform: scale(1.06) translateY(-1.8%); }
+
+        /* Flip Card Enhanced */
+        .flip-3d {
+          perspective: 1200px;
         }
-        .flip-3d { perspective: 1400px; }
-        .flip-3d-inner { transform-style: preserve-3d; transition: transform 0.7s; }
-        .flip-3d:hover .flip-3d-inner { transform: rotateY(180deg); }
-        .flip-face { backface-visibility: hidden; }
-        .flip-back { transform: rotateY(180deg); }
-        .glass-accent {
-          background: linear-linear(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.15));
-          border: 1px solid rgba(255,255,255,0.2);
-          backdrop-filter: blur(8px);
+        .flip-3d-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.9s ease, box-shadow 0.4s ease;
+          transform-style: preserve-3d;
+          border-radius: 24px;
         }
+        .flip-3d:hover .flip-3d-inner {
+          transform: rotateY(180deg) scale(1.04);
+          box-shadow: 0 18px 40px rgba(0,0,0,0.2);
+        }
+        .flip-face {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+        }
+        .flip-back {
+          transform: rotateY(180deg);
+        }
+
+        /* Swiper Pagination Custom */
+        .swiper-pagination-bullet {
+          background: rgba(255,255,255,0.8) !important;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          margin: 0 6px !important;
+          transition: all 0.35s ease;
+          box-shadow: 0 0 4px rgba(0,0,0,0.1);
+        }
+        .swiper-pagination-bullet-active {
+          background: #10b981 !important;
+          transform: scale(1.4);
+          box-shadow: 0 0 10px #10b981;
+        }
+          .swiper-pagination {
+  bottom: 10px !important;
+
+}
+
+.swiper-pagination-bullet:hover {
+  background: #059669 !important;
+  transform: scale(1.2);
+  box-shadow: 0 0 12px #10b981;
+}
+
+
+.particle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  animation: pulseGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from {
+    filter: brightness(0.8) blur(1px);
+  }
+  to {
+    filter: brightness(1.4) blur(1.5px);
+  }
+}
+
+
       `}</style>
 
-      {/* Floating green particles */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden z-0">
-        {[...Array(12)].map((_, i) => (
-          <motion.span
-            key={i}
-            className="absolute rounded-full opacity-25"
-            style={{
-              left: `${(i * 9 + 7) % 100}%`,
-              width: 18 + (i % 5) * 12,
-              height: 18 + (i % 5) * 12,
-              background: "radial-linear(circle at 30% 30%, rgba(34,197,94,0.25), rgba(16,185,129,0.08))",
-            }}
-            initial={{ y: -200 - Math.random() * 600, rotate: Math.random() * 360 }}
-            animate={{ y: 900 + Math.random() * 400, rotate: 360 }}
-            transition={{ duration: 30 + Math.random() * 20, repeat: Infinity, ease: "linear" }}
-          />
-        ))}
-      </div>
+{/* 🌿 Advanced Floating Particles */}
+<div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+  {[...Array(25)].map((_, i) => {
+    const size = 6 + Math.random() * 24;
+    const duration = 12 + Math.random() * 25;
+    const delay = Math.random() * 8;
+    const left = Math.random() * 100;
+    const colorOptions = [
+      "rgba(16,185,129,0.4)",  // emerald
+      "rgba(34,197,94,0.35)",  // green
+      "rgba(132,204,22,0.3)",  // lime
+      "rgba(20,184,166,0.35)", // teal
+      "rgba(5,150,105,0.35)",  // darker emerald
+    ];
+    const color = colorOptions[Math.floor(Math.random() * colorOptions.length)];
+
+    return (
+      <motion.span
+        key={i}
+        className="particle"
+        style={{
+          left: `${left}%`,
+          width: `${size}px`,
+          height: `${size}px`,
+          background: `radial-gradient(circle, ${color}, transparent 70%)`,
+          borderRadius: "50%",
+          boxShadow: `0 0 ${size * 1.2}px ${color}`,
+          filter: "blur(0.8px)",
+        }}
+        initial={{
+          y: Math.random() * -200,
+          opacity: 0,
+          x: Math.random() * 50 - 25,
+          scale: 0.8 + Math.random() * 0.5,
+        }}
+        animate={{
+          y: "110vh",
+          opacity: [0.1, 0.5, 0.2],
+          x: [
+            `${left + Math.random() * 20 - 10}%`,
+            `${left + Math.random() * 30 - 15}%`,
+          ],
+          scale: [0.9, 1.1, 0.9],
+        }}
+        transition={{
+          duration,
+          repeat: Infinity,
+          delay,
+          ease: "easeInOut",
+        }}
+      />
+    );
+  })}
+</div>
+
 
       {/* HERO */}
       <header className="relative z-10">
-        <div className="min-h-[72vh] flex items-center justify-center relative overflow-hidden">
+        <div className="min-h-[80vh] flex items-center justify-center relative">
           <motion.div
             className="absolute inset-0"
             animate={{ scale: [1, 1.05, 1] }}
-            transition={{ duration: 36, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 40, repeat: Infinity, ease: "easeInOut" }}
             style={{
               backgroundImage:
-                "linear-linear(180deg, rgba(20,83,45,0.22), rgba(255,255,255,0.08)), url('https://images.unsplash.com/photo-1531182127180-1c17c2f6fe1b?auto=format&fit=crop&w=1600&q=80')",
+                "linear-gradient(180deg, rgba(20,83,45,0.45), rgba(255,255,255,0.1)), url('https://images.unsplash.com/photo-1531182127180-1c17c2f6fe1b?auto=format&fit=crop&w=1600&q=80')",
               backgroundSize: "cover",
               backgroundPosition: "center",
-              filter: "contrast(0.95) saturate(0.9)",
             }}
           />
-
           <div className="max-w-5xl mx-auto text-center px-6 py-20 relative z-10">
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-linear-to-r from-green-700 via-emerald-600 to-teal-500">
-              Young Girls Empowerment
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-green-900 max-w-3xl mx-auto">
-              <span className="font-semibold text-shadow-green-700">Kanya Shakti</span> — building confident, educated, and self-reliant girls who uplift generations.
-            </p>
-            <motion.div
-              className="mt-8 inline-block max-w-2xl mx-auto bg-white/10 backdrop-blur-md border border-white/40 rounded-2xl p-6 text-green-600 shadow-xl shadow-emerald-95000"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+            <motion.h1
+              className="text-5xl md:text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-green-700 via-emerald-600 to-teal-500"
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
             >
-              <p className="text-lg italic leading-relaxed">“When you empower a girl, you empower generations.”</p>
-            </motion.div>
-
-            <div className="mt-8 flex items-center justify-center gap-4">
-              <a href="#join" className="px-6 py-3 rounded-full bg-linear-to-r from-green-600 to-emerald-500 text-white font-semibold shadow hover:scale-95 transition">
+              Young Girls Empowerment
+            </motion.h1>
+            <motion.p
+              className="mt-6 text-lg md:text-xl text-green-900 max-w-3xl mx-auto"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              <span className="font-semibold text-emerald-700">Kanya Shakti</span> — Building a generation of confident, educated, and self-reliant girls.
+            </motion.p>
+            <p className="text-lg italic mt-3 text-green-800">
+              “When you empower a girl, you empower generations.”
+            </p>
+            <div className="mt-10 flex flex-wrap justify-center gap-5">
+              <a
+                href="#join"
+                className="px-8 py-3 rounded-full bg-gradient-to-r from-green-600 to-emerald-500 text-white font-semibold shadow-md hover:shadow-xl hover:-translate-y-1 transition-all"
+              >
                 Get Involved
               </a>
-              <a href="#programs" className="px-6 py-3 rounded-full border border-black/40 text-green-950 bg-white/30 hover:bg-white/20 transition">
+              <a
+                href="#programs"
+                className="px-8 py-3 rounded-full border border-emerald-600 text-green-800 bg-white/40 hover:bg-white/60 backdrop-blur-sm transition-all"
+              >
                 Explore Programs
               </a>
             </div>
@@ -202,57 +304,82 @@ export default function YoungGirl() {
       </header>
 
       {/* STATS */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 -mt-12 relative z-20">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 -mt-10 relative z-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((s, i) => (
-            <motion.div key={i} className="glass-accent rounded-2xl p-6 text-center shadow-md" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}>
-              <div className="text-3xl font-extrabold text-emerald-700">
+            <motion.div
+              key={i}
+              className="bg-white/80 backdrop-blur-md border border-emerald-100 rounded-2xl p-6 text-center shadow-md hover:shadow-2xl transition-all"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+            >
+              <div className="text-4xl font-extrabold text-emerald-700">
                 <CountUp end={s.value} duration={2.6} separator="," />
               </div>
-              <div className="mt-2 text-sm text-gray-700">{s.label}</div>
+              <div className="mt-2 text-sm text-gray-700 font-medium">
+                {s.label}
+              </div>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* PROGRAMS — 3D flip cards */}
+      {/* PROGRAMS */}
       <section id="programs" className="max-w-7xl mx-auto px-6 md:px-12 py-20">
-        <motion.h2 className="text-3xl md:text-4xl font-bold text-green-700 text-center mb-8">
-          Program Pillars & Actions
+        <motion.h2 className="text-3xl md:text-4xl font-bold text-green-700 text-center mb-12">
+          Program Pillars & Initiatives
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {programs.map((p, i) => (
-            <motion.article key={p.id} className="flip-3d">
-              <div className="flip-3d-inner rounded-3xl shadow-2xl">
-                <div className="flip-face bg-white rounded-3xl md:flex overflow-hidden">
-                  <div className="md:w-1/2 p-6 flex flex-col justify-center bg-linear-to-br from-emerald-50 to-green-100">
-                    <h3 className="text-2xl font-semibold text-emerald-700">{p.title}</h3>
-                    <p className="mt-3 text-gray-700">{p.objective}</p>
-                    <button className="mt-5 px-4 py-2 rounded-full bg-linear-to-r from-green-600 to-emerald-500 text-white text-sm shadow-sm hover:brightness-95 transition">
-                      View activities
-                    </button>
-                  </div>
-                  <div className="md:w-1/2">
-                    <img src={p.img} alt={p.title} className="w-full h-64 md:h-full object-cover kenburns" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {programs.map((p) => (
+            <div key={p.id} className="flip-3d h-[440px]">
+              <div className="flip-3d-inner">
+                {/* FRONT */}
+                <div className="flip-face bg-white/90 backdrop-blur-md border border-emerald-100 rounded-3xl overflow-hidden flex flex-col">
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-5 flex flex-col flex-grow">
+                    <h3 className="text-xl font-semibold text-emerald-700">
+                      {p.title}
+                    </h3>
+                    <p className="mt-2 text-gray-700 text-sm flex-grow">
+                      {p.objective}
+                    </p>
+                    <div className="mt-4 text-emerald-600 text-sm font-semibold">
+                      Hover to see activities →
+                    </div>
                   </div>
                 </div>
+
+                {/* BACK */}
+                <div className="flip-face flip-back bg-gradient-to-br from-emerald-700 to-teal-600 rounded-3xl p-5 flex flex-col justify-center shadow-inner">
+                  <h4 className="text-lg font-bold text-white mb-3 text-center">
+                    Activities
+                  </h4>
+                  <ul className="space-y-1 text-white  text-sm text-center">
+                    {p.activities.map((act, i) => (
+                      <li key={i}>• {act}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </motion.article>
+            </div>
           ))}
         </div>
       </section>
 
       {/* GALLERY */}
-      <section className="py-16 bg-linear-to-b from-[#f0fff4] to-[#ecfdf5]">
+      <section className="py-16 bg-gradient-to-b from-[#f0fff4] to-[#ecfdf5]">
         <div className="w-full px-4 md:px-8">
           <motion.h3 className="text-3xl font-bold text-green-700 text-center mb-10">
-            Glimpses — Young Girls Empowerment
+            Glimpses of Empowerment
           </motion.h3>
-
           <Swiper
             modules={[Autoplay, Pagination, EffectFade]}
-            autoplay={{ delay: 3800, disableOnInteraction: false }}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
             pagination={{ clickable: true }}
             loop
             spaceBetween={20}
@@ -262,7 +389,7 @@ export default function YoungGirl() {
               1024: { slidesPerView: 2.5 },
               1280: { slidesPerView: 3.2 },
             }}
-            className="w-full"
+            className="w-full  py-10 h-110"
           >
             {[
               "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1400&q=80",
@@ -271,10 +398,17 @@ export default function YoungGirl() {
               "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=80",
             ].map((src, i) => (
               <SwiperSlide key={i}>
-                <motion.div className="relative h-72 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg" whileHover={{ scale: 1.03 }}>
-                  <img src={src} alt={`YGE Glimpse ${i + 1}`} className="w-full h-full object-cover kenburns" />
+                <motion.div
+                  className="relative h-72 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-xl "
+                  whileHover={{ scale: 1.04 }}
+                >
+                  <img
+                    src={src}
+                    alt={`Glimpse ${i + 1}`}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute bottom-4 left-4 bg-white/70 backdrop-blur-md py-2 px-3 rounded-lg text-sm font-semibold text-emerald-700 shadow">
-                    Program Glimpse #{i + 1}
+                    Glimpse #{i + 1}
                   </div>
                 </motion.div>
               </SwiperSlide>
@@ -284,19 +418,25 @@ export default function YoungGirl() {
       </section>
 
       {/* CTA */}
-      <section id="join" className="py-12 bg-linear-to-r from-emerald-50 to-green-100">
+      <section
+        id="join"
+        className="py-12 bg-gradient-to-r from-emerald-50 to-green-100"
+      >
         <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <h4 className="text-2xl font-bold text-green-800">Support Kanya Shakti</h4>
+            <h4 className="text-2xl font-bold text-green-800">
+              Support Kanya Shakti
+            </h4>
             <p className="text-gray-700">
-              Join hands to provide skills, safety, and supportive spaces for young girls.
+              Join hands to provide skills, safety, and supportive spaces for
+              young girls.
             </p>
           </div>
 
           <div className="flex gap-3">
             <a
               href="/donate"
-              className="px-6 py-3 rounded-full bg-linear-to-r from-green-600 to-emerald-500 text-white font-semibold shadow hover:brightness-95 transition"
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-green-600 to-emerald-500 text-white font-semibold shadow hover:brightness-95 transition"
             >
               Donate
             </a>

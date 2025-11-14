@@ -11,6 +11,7 @@ import Media from "./pages/Media";
 import Contact from "./pages/Contact";
 import Donate from "./pages/Donate";
 import Terms from "./pages/Terms";
+import Refund from "./pages/Refund";
 
 // Individual Project Pages
 import YoungGirlsEmpowerment from "./pages/Project/YoungGirl";
@@ -44,7 +45,7 @@ function App() {
       <ScrollToTop />
 
       {/* Main content area */}
-      <main className="grow mx-auto container ">
+      <main className="grow w-full  ">
         <Routes>
           {/* 🌍 Main Pages */}
           <Route path="/" element={<Home />} />
@@ -56,6 +57,7 @@ function App() {
           <Route path="/donate" element={<Donate />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/refund" element={<Refund />}  />
           <Route path="/donerdata" element={<DonerData />} />
           <Route path="/bill" element={<Bill />} />
           <Route path="/success" element={<Success />} />

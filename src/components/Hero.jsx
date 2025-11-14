@@ -63,7 +63,7 @@ const Hero = () => {
       `}</style>
 
       {/* ===== Hero Section ===== */}
-      <section className="relative min-h-[90vh] sm:min-h-screen w-full overflow-hidden select-none">
+      <section className="relative min-h-[90vh] sm:min-h-screen p-0 mx-0! px-0! w-full! h-screen! overflow-hidden select-none m-0 border border-amber-700  ">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           autoplay={{ delay: 5500, disableOnInteraction: false }}

@@ -7,17 +7,8 @@ import CountUp from "react-countup";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-
-/**
- * Tribal Girl — Themed page aligned to FoodClothing.jsx design language
- * - cinematic hero (slow zoom)
- * - floating parallax leaves
- * - glass stat cards (CountUp)
- * - 3D flip cards for initiatives
- * - animated vertical timeline
- * - Ken Burns gallery (Swiper)
- * - CTA
- */
+import Edu from "../../assets/TribleEdu.webp";
+import Nut from "../../assets/Triblenut.webp";
 
 const stats = [
   { label: "Girls enrolled", value: 1240 },
@@ -39,7 +30,7 @@ const initiatives = [
       "Uniforms, books & learning kits",
       "Scholarships & mentorship for higher education",
     ],
-    img: "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1400&q=80",
+    img: Edu,
     color: "from-emerald-50 to-emerald-100",
     icon: "📚",
   },
@@ -55,7 +46,7 @@ const initiatives = [
       "Iron/calcium supplementation drives",
       "Nutrition education & cooking workshops",
     ],
-    img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=80",
+    img:Nut,
     color: "from-teal-50 to-cyan-50",
     icon: "🥦",
   },
@@ -76,14 +67,12 @@ const initiatives = [
   },
 ];
 
-
-
 export default function TribalGirl() {
   return (
-    <div className="w-full overflow-hidden bg-linear-to-b from-[#f0fff5] via-[#e8fff0] to-white text-gray-800 relative">
-      {/* Component-scoped CSS */}
+    <div className="w-full overflow-hidden bg-gradient-to-b from-[#f0fff5] via-[#e8fff0] to-white text-gray-800 relative mt-10">
+
+      {/* FIXED CSS */}
       <style>{`
-        /* Ken Burns */
         .kenburns {
           transform-origin: center;
           animation: tgKb 18s ease-in-out infinite alternate;
@@ -93,22 +82,20 @@ export default function TribalGirl() {
           to { transform: scale(1.06) translateY(-1.6%); }
         }
 
-        /* 3D flip */
         .flip-3d { perspective: 1400px; }
         .flip-3d-inner { transform-style: preserve-3d; transition: transform 0.7s; }
-        .flip-3d:hover .flip-3d-inner, .flip-3d:focus-within .flip-3d-inner { transform: rotateY(180deg); }
-        .flip-face { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+        .flip-3d:hover .flip-3d-inner { transform: rotateY(180deg); }
+        .flip-face { backface-visibility: hidden; }
         .flip-back { transform: rotateY(180deg); }
 
-        /* glass accent */
         .glass-accent {
-          background: linear-linear(135deg, rgba(255,255,255,0.62), rgba(255,255,255,0.12));
+          background: linear-gradient(135deg, rgba(255,255,255,0.62), rgba(255,255,255,0.12));
           border: 1px solid rgba(255,255,255,0.14);
           backdrop-filter: blur(6px);
         }
       `}</style>
 
-      {/* Floating leaves — parallax */}
+      {/* Floating leaves */}
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden z-0">
         {[...Array(8)].map((_, i) => {
           const left = `${(i * 13) % 100}%`;
@@ -118,7 +105,7 @@ export default function TribalGirl() {
           return (
             <motion.span
               key={i}
-              className="absolute opacity-8"
+              className="absolute opacity-80"
               style={{
                 left,
                 width: size,
@@ -126,9 +113,8 @@ export default function TribalGirl() {
                 backgroundImage: "url('/assets/leaf.svg')",
                 backgroundSize: "contain",
                 backgroundRepeat: "no-repeat",
-                transform: `translateY(-20vh)`,
               }}
-              initial={{ y: -200 - Math.random() * 400, rotate: Math.random() * 360 }}
+              initial={{ y: -260 - Math.random() * 400, rotate: Math.random() * 360 }}
               animate={{ y: 900 + Math.random() * 400, rotate: 360 }}
               transition={{ duration, repeat: Infinity, ease: "linear", delay }}
             />
@@ -136,67 +122,64 @@ export default function TribalGirl() {
         })}
       </div>
 
-      {/* HERO — cinematic with slow zoom + animated linear overlay */}
+      {/* HERO */}
       <header className="relative z-10">
-        <div className="min-h-[72vh] flex items-center justify-center bg-fixed bg-center bg-cover relative overflow-hidden">
+        <div className="min-h-[78vh] flex items-center justify-center bg-center bg-cover relative overflow-hidden">
+
+          {/* Background image */}
           <motion.div
             className="absolute inset-0"
             initial={{ scale: 1 }}
             animate={{ scale: 1.06 }}
-            transition={{ duration: 36, repeat: Infinity, ease: "linear", repeatType: "mirror" }}
-            aria-hidden
+            transition={{ duration: 36, repeat: Infinity, ease: "linear" }}
             style={{
               backgroundImage:
-                "linear-linear(180deg, rgba(6,30,20,0.28), rgba(255,255,255,0.04)), url('https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=1600&q=80')",
+                "linear-gradient(180deg, rgba(6,30,20,0.48), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=1600&q=80')",
               backgroundPosition: "center",
               backgroundSize: "cover",
-              filter: "saturate(0.96) contrast(0.98)",
+              filter: "brightness(0.95)",
             }}
           />
 
+          {/* Overlay */}
           <motion.div
             className="absolute inset-0"
             animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
             transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
             style={{
-              background: "linear-linear(120deg, rgba(40,100,50,0.04), rgba(160,220,130,0.03))",
-              mixBlendMode: "screen",
+              background: "linear-gradient(120deg, rgba(40,100,50,0.25), rgba(160,220,130,0.15))",
+              mixBlendMode: "overlay",
             }}
-            aria-hidden
           />
 
+          {/* Hero content */}
           <motion.div
             className="max-w-5xl mx-auto text-center px-6 py-20 relative z-10"
             initial={{ opacity: 0, y: -18 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
           >
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-              <span className="bg-clip-text text-transparent bg-linear-to-r from-[#114d27] via-[#2e7d32] to-[#8bc34a]">
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#d9fdd3] via-[#c6ffdd] to-[#e8ffe3]">
                 Tribal Girl Children Care
               </span>
             </h1>
 
-            <motion.p className="mt-6 text-lg md:text-xl text-gray-100 max-w-3xl mx-auto">
-              <span className="font-semibold text-white/90">Kanya Jagriti Foundation</span> — nurturing education, nutrition & culture for tribal girls of Jharkhand.
+            <motion.p className="mt-6 text-lg md:text-xl text-white/95 max-w-3xl mx-auto drop-shadow-md">
+              <span className="font-semibold">Kanya Jagriti Foundation</span> — nurturing education, nutrition & culture for tribal girls of Jharkhand.
             </motion.p>
 
-            <motion.div className="mt-8 inline-block max-w-2xl mx-auto bg-white/8 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-white shadow-lg"
-              initial={{ scale: 0.98, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6 }}>
+            <motion.div
+              className="mt-8 inline-block max-w-2xl mx-auto bg-white/20 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-white shadow-xl"
+            >
               <p className="text-lg italic leading-relaxed">“Strong roots, bright futures — caring for every tribal girl child.”</p>
-              <footer className="mt-3 text-sm opacity-90">Vision — education, nutrition & cultural pride.</footer>
+              <footer className="mt-3 text-sm opacity-95">Vision — education, nutrition & cultural pride.</footer>
             </motion.div>
 
-            <motion.div className="mt-8 flex items-center justify-center gap-4"
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}>
-              <a href="#join" className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#0b663c] text-white font-semibold shadow hover:bg-[#14532d] transition transform active:scale-95">
+            <motion.div className="mt-8 flex items-center justify-center gap-4">
+              <a href="#join" className="px-6 py-3 rounded-full bg-[#0b663c] text-white font-semibold shadow hover:bg-[#14532d]">
                 Join the Cause
               </a>
-              <a href="#learn" className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/30 text-white bg-white/6 hover:bg-white/12 transition">
+              <a href="#learn" className="px-5 py-3 rounded-full border border-white/30 text-white bg-white/10 hover:bg-white/20">
                 Learn More
               </a>
             </motion.div>
@@ -204,8 +187,8 @@ export default function TribalGirl() {
         </div>
       </header>
 
-      {/* STATS — glass cards */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 -mt-12 relative z-20">
+      {/* STATS */}
+      <section className="max-w-7xl mx-auto px-6 md:px-12 -mt-12 relative z-20 mb-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((s, i) => (
             <motion.div
@@ -225,7 +208,7 @@ export default function TribalGirl() {
       </section>
 
       {/* INITIATIVES — 3D flip cards */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-10">
         <motion.h2 className="text-3xl md:text-4xl font-bold text-[#155724] text-center mb-8" initial={{ opacity: 0, y: -10 }} whileInView={{ opacity: 1, y: 0 }}>
           Program Pillars & Initiatives
         </motion.h2>
@@ -235,34 +218,56 @@ export default function TribalGirl() {
             <motion.article key={it.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.12 }}>
               <div className="flip-3d">
                 <div className="flip-3d-inner rounded-3xl shadow-2xl">
-                  {/* front */}
-                  <div className="flip-face relative bg-white rounded-3xl md:flex overflow-hidden">
-                    <div className={`md:w-1/2 p-6 flex flex-col justify-center bg-linear-to-br ${it.color}`}>
-                      <div className="text-5xl mb-4">{it.icon}</div>
-                      <h3 className="text-2xl font-semibold text-[#0b663c]">{it.title}</h3>
-                      <p className="mt-3 text-gray-700">{it.summary}</p>
-                      <div className="mt-5">
-                        <button className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0b663c] text-white text-sm shadow-sm hover:bg-[#155724] transition">
-                          View activities
-                        </button>
-                      </div>
-                    </div>
+                 {/* FRONT */}
+<div className="flip-face relative bg-white rounded-3xl overflow-hidden flex flex-col">
 
-                    <div className="md:w-1/2 p-6 bg-white">
-                      <img src={it.img} alt={it.title} className="w-full h-48 md:h-full object-cover rounded-lg shadow-sm kenburns" loading="lazy" onError={(e)=> e.target.src='https://via.placeholder.com/800x500?text=Image+Unavailable'} />
-                      <div className="mt-4">
-                        <h4 className="text-lg font-semibold text-[#14532d]">Highlights</h4>
-                        <ul className="mt-2 space-y-2 list-inside">
-                          {it.activities.slice(0,4).map((a, ai) => (
-                            <li key={ai} className="flex items-start gap-3 text-gray-700">
-                              <span className="shrink-0 mt-1 text-green-600">•</span>
-                              <span>{a}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+  {/* Image on top */}
+  <div className="w-full h-48 md:h-56">
+    <img
+      src={it.img}
+      alt={it.title}
+      className="w-full h-full object-cover rounded-t-3xl shadow-sm"
+      loading="lazy"
+      onError={(e)=> e.target.src='https://via.placeholder.com/800x500?text=Image+Unavailable'}
+    />
+  </div>
+
+  {/* Text Bottom Section */}
+  <div className="p-6 bg-gradient-to-br from-white to-green-50 flex flex-col justify-between flex-grow rounded-b-3xl">
+
+    <div className="text-5xl mb-3">{it.icon}</div>
+
+    <h3 className="text-2xl font-semibold text-[#0b663c]">
+      {it.title}
+    </h3>
+
+    <p className="mt-2 text-gray-700 leading-relaxed">
+      {it.summary}
+    </p>
+
+    {/* Highlights */}
+    <div className="mt-5">
+      <h4 className="text-lg font-semibold text-[#14532d]">Highlights</h4>
+      <ul className="mt-2 space-y-2">
+        {it.activities.slice(0, 4).map((a, ai) => (
+          <li key={ai} className="flex items-start gap-3 text-gray-700">
+            <span className="mt-1 text-green-600">•</span>
+            <span>{a}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {/* Button */}
+    <div className="mt-5">
+      <button className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0b663c] text-white text-sm shadow-sm hover:bg-[#155724] transition">
+        View activities
+      </button>
+    </div>
+
+  </div>
+</div>
+
 
                   {/* back */}
                   <div className="flip-face flip-back absolute inset-0 rounded-3xl bg-linear-to-br from-white/90 to-green-50 p-8">
@@ -301,26 +306,26 @@ export default function TribalGirl() {
         </div>
       </section>
 
-      
 
-      {/* GALLERY — Ken Burns Swiper */}
-      <section className="py-16 bg-linear-to-b from-[#f7fff7] to-[#e8fff0]">
-        <div className="w-full px-4 md:px-8">
-          <motion.h3 className="text-3xl font-bold text-[#14532d] text-center mb-10" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>Glimpses — Tribal Girl Care</motion.h3>
+      {/* GALLERY */}
+      <section className="py-16 bg-gradient-to-b from-[#f7fff7] to-[#e8fff0]">
+        <div className="px-4 md:px-8">
+          <motion.h3 className="text-3xl font-bold text-[#14532d] text-center mb-10">
+            Glimpses — Tribal Girl Care
+          </motion.h3>
 
           <Swiper
             modules={[Autoplay, Pagination, EffectFade]}
             autoplay={{ delay: 3800, disableOnInteraction: false }}
             pagination={{ clickable: true }}
             loop
-            spaceBetween={20}
+            spaceBetween={24}
             slidesPerView={1.05}
             breakpoints={{
-              640: { slidesPerView: 1.5, spaceBetween: 20 },
-              1024: { slidesPerView: 2.5, spaceBetween: 24 },
-              1280: { slidesPerView: 3.2, spaceBetween: 28 },
+              640: { slidesPerView: 1.4, spaceBetween: 20 },
+              1024: { slidesPerView: 2.4, spaceBetween: 24 },
+              1280: { slidesPerView: 3.1, spaceBetween: 28 },
             }}
-            className="w-full"
           >
             {[
               "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1400&q=80",
@@ -329,9 +334,9 @@ export default function TribalGirl() {
               "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1400&q=80",
             ].map((src, i) => (
               <SwiperSlide key={i}>
-                <motion.div className="relative h-72 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg" whileHover={{ scale: 1.03 }} transition={{ duration: 0.4 }}>
-                  <img src={src} alt={`Tribal glimpse ${i+1}`} className="w-full h-full object-cover kenburns" loading="lazy" onError={(e)=> e.target.src='https://via.placeholder.com/800x500?text=Image+Unavailable'} />
-                  <div className="absolute bottom-4 left-4 bg-white/70 backdrop-blur-md py-2 px-3 rounded-lg text-sm font-semibold text-[#0b663c] shadow">
+                <motion.div className="relative h-72 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg" whileHover={{ scale: 1.03 }}>
+                  <img src={src} alt="" className="w-full h-full object-cover kenburns" loading="lazy" />
+                  <div className="absolute bottom-4 left-4 bg-white/75 backdrop-blur-md py-2 px-3 rounded-lg text-sm font-semibold text-[#0b663c] shadow">
                     Field Activity #{i + 1}
                   </div>
                 </motion.div>
@@ -342,16 +347,25 @@ export default function TribalGirl() {
       </section>
 
       {/* CTA */}
-      <section id="join" className="py-12 bg-linear-to-r from-[#dff7e6] to-[#e8fff0]">
+      <section id="join" className="py-12 bg-gradient-to-r from-[#dff7e6] to-[#e8fff0]">
         <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h4 className="text-2xl font-bold text-[#0b663c]">Support Tribal Girl Care</h4>
-            <p className="text-gray-700">Join hands to support education, nutrition and cultural pride for tribal girls.</p>
+            <p className="text-gray-700">
+              Join hands to support education, nutrition and cultural pride for tribal girls.
+            </p>
           </div>
 
           <div className="flex gap-3">
-            <a href="/donate" className="inline-block px-6 py-3 rounded-full bg-[#0b663c] text-white font-semibold shadow hover:bg-[#14532d] transition">Donate</a>
-            <a href="/volunteer" className="inline-block px-6 py-3 rounded-full border border-[#0b663c] text-[#0b663c] font-semibold bg-white hover:bg-[#f0fff5] transition">Volunteer / Partner</a>
+            <a href="/donate" className="px-6 py-3 rounded-full bg-[#0b663c] text-white font-semibold hover:bg-[#14532d]">
+              Donate
+            </a>
+            <a
+              href="/volunteer"
+              className="px-6 py-3 rounded-full border border-[#0b663c] text-[#0b663c] bg-white hover:bg-[#f0fff5]"
+            >
+              Volunteer / Partner
+            </a>
           </div>
         </div>
       </section>

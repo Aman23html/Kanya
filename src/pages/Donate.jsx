@@ -5,54 +5,121 @@ import { useNavigate } from "react-router-dom";
 import test from "../assets/test.png";
 
 const purposes = [
-  { title: "Girl Child Education", desc: "Help a girl receive quality education.", color: "from-[#fef6e4] to-[#fff]" },
-  { title: "Women Empowerment", desc: "Support skill training & self-reliance programs.", color: "from-[#e6faf6] to-[#fff]" },
-  { title: "Tribal Welfare", desc: "Preserve culture & uplift tribal communities.", color: "from-[#fefce8] to-[#fff]" },
+  {
+    title: "Young Girls Empowerment",
+    desc: "Enable life skills, self-confidence, and leadership in young girls."
+  },
+  {
+    title: "Tribal Girl Children Care",
+    desc: "Support care and opportunities for tribal girl children."
+  },
+  {
+    title: "Food, Clothing, Shelter & Medical Help",
+    desc: "Provide basic needs and medical help for those in need."
+  },
+  {
+    title: "Environment Protection",
+    desc: "Promote sustainable environmental actions and eco-friendly programs."
+  },
+  {
+    title: "Legal Help",
+    desc: "Free legal aid for vulnerable individuals facing injustice."
+  },
+  {
+    title: "Financial Independence",
+    desc: "Help women and families achieve financial self-reliance through training."
+  },
+  {
+    title: "Volunteer Engagement Program",
+    desc: "Join hands in social work and development initiatives as a volunteer."
+  },
+  {
+    title: "Mothers’ Wellness Care",
+    desc: "Care for the well-being and health of mothers in need."
+  }
 ];
+
+const cardVariants = {
+  offscreen: { opacity: 0, y: 50, scale: 0.95 },
+  onscreen: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { type: "spring", bounce: 0.25, duration: 1 }
+  }
+};
 
 const Donate = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#e6faf6] via-[#f0fdfa] to-white min-h-screen">
-      {/* Animated Gradient Blobs */}
+    <section className="relative min-h-screen bg-gradient-to-br from-teal-50 via-white to-emerald-50 overflow-hidden mt-30 sm:mt-20 lg:mt-10">
+      {/* Animated Gradient Orbs */}
       <motion.div
-        animate={{ y: [0, 30, 0], x: [0, 20, 0] }}
-        transition={{ duration: 10, repeat: Infinity }}
-        className="absolute top-0 left-0 w-[25rem] h-[25rem] bg-gradient-to-tr from-[#99f6e4] to-[#a7f3d0] blur-[120px] opacity-40 rounded-full"
-      />
-      <motion.div
-        animate={{ y: [0, -25, 0], x: [0, -15, 0] }}
-        transition={{ duration: 12, repeat: Infinity }}
-        className="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-gradient-to-tr from-[#c7f9cc] to-[#e0f7fa] blur-[150px] opacity-50 rounded-full"
+        animate={{ y: [0, 40, 0], x: [0, -30, 0] }}
+        transition={{ duration: 10, repeat: Infinity, repeatType: "mirror" }}
+        className="absolute top-6 left-6 w-56 h-56 sm:w-72 sm:h-72 bg-emerald-200/40 blur-[90px] sm:blur-[110px] rounded-full opacity-70"
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24">
+      <motion.div
+        animate={{ y: [0, -40, 0], x: [0, 30, 0] }}
+        transition={{ duration: 12, repeat: Infinity, repeatType: "mirror" }}
+        className="absolute bottom-6 right-6 w-60 h-60 sm:w-80 sm:h-80 bg-teal-300/40 blur-[100px] sm:blur-[120px] rounded-full opacity-70"
+      />
+
+      {/* Header Section */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-20 sm:pt-24">
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl sm:text-6xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#006a6a] to-[#00c9a7] mb-16"
+          transition={{ duration: 1 }}
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-center bg-gradient-to-r from-teal-700 via-emerald-600 to-green-500 bg-clip-text text-transparent drop-shadow-sm"
         >
-          Choose a Cause to Support
+          Support a Cause
         </motion.h1>
 
-        {/* Purpose Cards */}
-        <div className="grid md:grid-cols-3 gap-10">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 1 }}
+          className="text-center text-gray-700 mt-4 text-base sm:text-lg max-w-xl sm:max-w-2xl mx-auto px-3"
+        >
+          Choose a program close to your heart and empower lives with your contribution.
+        </motion.p>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10 mt-14 pb-20 px-4 sm:px-0">
           {purposes.map((p, i) => (
             <motion.div
               key={i}
-              whileHover={{ scale: 1.05 }}
-              className={`p-8 rounded-3xl bg-gradient-to-br ${p.color} shadow-[0_15px_40px_-10px_rgba(0,0,0,0.15)] hover:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.25)] transition-all`}
+              className="relative bg-white shadow-lg rounded-3xl p-5 sm:p-6 border border-teal-100 backdrop-blur-xl transition-all hover:shadow-2xl hover:-translate-y-2 duration-300"
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
+              whileHover={{ scale: 1.03 }}
             >
-              <img src={test} alt={p.title} className="rounded-2xl mb-6 shadow-md" />
-              <h3 className="text-2xl font-semibold text-[#004f4f] mb-3">{p.title}</h3>
-              <p className="text-gray-700 mb-6">{p.desc}</p>
-              <button
+              <img
+                src={test}
+                alt={p.title}
+                className="rounded-xl h-32 sm:h-36 w-full object-cover shadow-md mb-4"
+              />
+
+              <h3 className="text-lg sm:text-xl font-semibold text-teal-700 mb-2 text-center">
+                {p.title}
+              </h3>
+
+              <p className="text-gray-700 text-sm leading-snug text-center min-h-[50px] sm:min-h-[60px] px-1">
+                {p.desc}
+              </p>
+
+              <motion.button
                 onClick={() => navigate("/donerdata", { state: { purpose: p.title } })}
-                className="bg-gradient-to-r from-[#00c9a7] to-[#00bfa6] text-white px-6 py-3 rounded-full shadow-lg hover:shadow-[0_0_20px_#00c9a7]"
+                whileHover={{ scale: 1.07 }}
+                className="mt-6 w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-2 sm:py-2.5 rounded-full font-semibold tracking-wide shadow-md hover:shadow-lg text-sm sm:text-base"
               >
                 Donate Now
-              </button>
+              </motion.button>
             </motion.div>
           ))}
         </div>

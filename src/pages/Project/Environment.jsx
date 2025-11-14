@@ -29,7 +29,7 @@ const slides = [
 
 const Environment = () => {
   return (
-    <div className="relative bg-linear-to-b from-emerald-50 via-white to-green-100 overflow-hidden">
+    <div className="relative bg-linear-to-b from-emerald-50 via-white to-green-100 overflow-hidden mt-10">
       {/* 🌿 Floating Leaf Pattern */}
       <motion.div
         className="absolute top-0 left-0 w-full h-full bg-[url('/assets/leaf-pattern.png')] opacity-5 bg-fixed bg-cover z-0"
