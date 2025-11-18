@@ -64,13 +64,13 @@ const Navbar = () => {
 
         <div className="flex items-center gap-3 text-[#6dd3c6]">
           <span className="text-white text-sm font-medium">Social Media</span>
-          <a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-[#FF7F50] transition">
+          <a href="https://www.facebook.com/share/1A4pGNGkeE/" target="_blank" rel="noreferrer" className="hover:text-[#FF7F50] transition">
             <FaFacebookF size={16} />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-[#FF7F50] transition">
+          <a href=" https://www.instagram.com/kanyajagritifoundation3/" target="_blank" rel="noreferrer" className="hover:text-[#FF7F50] transition">
             <FaInstagram size={16} />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-[#FF7F50] transition">
+          <a href="https://www.linkedin.com/company/kanya-jagriti-foundation/" target="_blank" rel="noreferrer" className="hover:text-[#FF7F50] transition">
             <FaLinkedinIn size={16} />
           </a>
         </div>
