@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -13,6 +13,8 @@ import finance from "../assets/Finance.webp";
 import volunteer from "../assets/voluenteer.webp";
 import environment from "../assets/project3.webp";
 import food from "../assets/food1.webp";
+
+let swiperRef;
 
 const projects = [
   {
@@ -42,7 +44,7 @@ const projects = [
   },
   {
     title: "Financial Independence (Arthik Shakti)",
-    desc: "Building entrepreneurial skills and financial literacy for women to lead independent, confident, and empowered lives.",
+    desc: "Building entrepreneurial skills and financial literacy for women to lead independent, confident, empowered lives.",
     img: finance,
   },
   {
@@ -72,11 +74,11 @@ export default function OurProjects() {
       id="projects"
       className="relative py-8 sm:py-10 bg-linear-to-b from-[#f9fcfd] to-[#ecf7f5] overflow-hidden"
     >
-      {/* Decorative Glows */}
+      {/* Background Decorative Glows */}
       <div className="absolute -top-10 left-1/3 w-64 h-64 bg-[#88d1c3]/25 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-0 right-20 w-64 h-64 bg-[#ffb6b6]/30 rounded-full blur-3xl -z-10"></div>
 
-      {/* Section Heading */}
+      {/* Section Header */}
       <motion.h3
         variants={fadeUp}
         initial="hidden"
@@ -88,24 +90,39 @@ export default function OurProjects() {
         <div className="w-16 h-[3px] bg-[#FF7F50]/60 mx-auto mt-2 rounded-full"></div>
       </motion.h3>
 
-      {/* Swiper Carousel */}
-      <div className="max-w-6xl mx-auto px-4 ">
+      {/* Slider Container */}
+      <div className="relative max-w-6xl mx-auto px-4">
+
+        {/* Left Button */}
+        <button
+          className="absolute left-0 top-1/2 z-20 -translate-y-1/2 bg-white shadow-lg p-3 rounded-full hover:bg-[#FF7F50] hover:text-white transition-all"
+          onClick={() => swiperRef.slidePrev()}
+        >
+          ‹
+        </button>
+
+        {/* Right Button */}
+        <button
+          className="absolute right-0 top-1/2 z-20 -translate-y-1/2 bg-white shadow-lg p-3 rounded-full hover:bg-[#FF7F50] hover:text-white transition-all"
+          onClick={() => swiperRef.slideNext()}
+        >
+          ›
+        </button>
+
+        {/* Swiper */}
         <Swiper
+          onSwiper={(s) => (swiperRef = s)}
           slidesPerView={1}
           spaceBetween={30}
           loop
           centeredSlides
-          autoplay={{ delay: 3500, disableOnInteraction: false }}
-          pagination={{
-            clickable: true,
-            el: ".custom-pagination",
-          }}
+          pagination={{ clickable: true, el: ".custom-pagination" }}
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
-          modules={[Pagination, Autoplay]}
+          modules={[Pagination]}
           className="pb-10"
         >
           {projects.map((proj, i) => (
@@ -116,27 +133,31 @@ export default function OurProjects() {
                 whileInView="show"
                 viewport={{ once: false, amount: 0.3 }}
                 whileHover={{
-                  scale: 1.05,
-                  transition: { type: "spring", stiffness: 150, damping: 10 },
+                  scale: 1.04,
+                  transition: { type: "spring", stiffness: 150, damping: 12 },
                 }}
-                className="group bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500"
+                className="group bg-white 
+                  rounded-2xl shadow-md border border-gray-100 
+                  overflow-hidden hover:shadow-2xl 
+                  transition-all duration-500
+                  h-[430px] flex flex-col"
               >
                 {/* Image */}
-                <div className="relative w-full h-60 overflow-hidden">
+                <div className="relative w-full h-48 overflow-hidden">
                   <img
                     src={proj.img}
                     alt={proj.title}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-700"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-700"></div>
                 </div>
 
                 {/* Content */}
-                <div className="p-5">
-                  <h4 className="text-lg sm:text-xl font-semibold text-[#004b4b] mb-3 group-hover:text-[#FF7F50] transition-colors duration-300">
+                <div className="p-5 flex flex-col flex-grow">
+                  <h4 className="text-lg sm:text-xl font-semibold text-[#004b4b] mb-2 group-hover:text-[#FF7F50] transition-colors">
                     {proj.title}
                   </h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">
+                  <p className="text-gray-700 text-sm leading-relaxed line-clamp-4">
                     {proj.desc}
                   </p>
                 </div>
@@ -145,8 +166,14 @@ export default function OurProjects() {
           ))}
         </Swiper>
 
-        {/* Pagination Dots */}
-        <div className="custom-pagination flex justify-center mt-4 space-x-2 [&_.swiper-pagination-bullet]:bg-green-400! [&_.swiper-pagination-bullet-active]:!bg-[#FF7F50]! [&_.swiper-pagination-bullet]:w-3! [&_.swiper-pagination-bullet]:h-3! [&_.swiper-pagination-bullet]:rounded-full!"></div>
+        {/* Pagination */}
+        <div className="custom-pagination flex justify-center mt-4 space-x-2 
+          [&_.swiper-pagination-bullet]:bg-green-400! 
+          [&_.swiper-pagination-bullet-active]:!bg-[#FF7F50]!
+          [&_.swiper-pagination-bullet]:w-3! 
+          [&_.swiper-pagination-bullet]:h-3! 
+          [&_.swiper-pagination-bullet]:rounded-full!">
+        </div>
       </div>
     </section>
   );

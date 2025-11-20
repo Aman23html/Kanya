@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
+import { EffectCoverflow, Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
+
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
+
 import test from "../assets/test.png";
 import Kumari from "../assets/kumari.webp";
 import Payal from "../assets/Payal.webp";
@@ -12,91 +13,7 @@ import Navya from "../assets/Navya.webp";
 import Mona from "../assets/Mona.webp";
 import Sumitra from "../assets/Sumitra.webp";
 
-
-
-
 const testimonials = [
-  // Existing testimonials...
-  {
-    name: "Rani Kumari",
-    role: "Class 10 Student | Beneficiary",
-    quote:
-      "Before I joined the education center, I was always the quiet one in class. I struggled with maths and English. After three months at Shiksha Jyoti, I started answering questions in school and even helped a friend with her homework. I want to become a teacher one day.",
-    program: "Student, Shiksha Jyoti Program",
-    img: test,
-  },
-  {
-    name: "Rahul Sinha",
-    role: "Software Engineer | Volunteer",
-    quote:
-      "Teaching digital skills to women at Saksham Nari changed my perspective. One woman in her 40s told me she never believed she could learn to use a laptop — now she runs her own tailoring page on social media. It’s amazing what empowerment looks like up close.",
-    program: "Volunteer Trainer, Saksham Nari",
-    img: test,
-  },
-  {
-    name: "Anjali Mishra",
-    role: "High Court Lawyer | Legal Volunteer",
-    quote:
-      "In the sessions we conduct under Nyay Sakhi, we start with basics — what rights women have under law. Many are shocked to learn they can fight for maintenance, property, or protection from abuse. Some cry, some smile. All of them leave a little stronger.",
-    program: "Legal Educator, Nyay Sakhi Project",
-    img: test,
-  },
-  {
-    name: "Savitri Devi",
-    role: "Homemaker | SHG Member",
-    quote:
-      "I never earned a rupee before. Now, with four other women from my village, we run a small spice-making unit. I didn’t just learn how to manage money — I learned how to speak up in front of people. That’s what Nari Shakti Sangathan gave me.",
-    program: "Self-Help Group Member, Giridih",
-    img: test,
-  },
-  {
-    name: "Rakesh Sharma",
-    role: "School Teacher | Community Partner",
-    quote:
-      "When the awareness sessions from Nari Suraksha started in our school, I noticed the change quickly. Girls started asking more questions. Some even stayed back after class to discuss safety, harassment, or how to convince their parents to let them study longer.",
-    program: "Teacher Partner, Dhanbad",
-    img: test,
-  },
-  {
-    name: "Puja Kumari",
-    role: "B.Tech Graduate | Entrepreneur",
-    quote:
-      "Even with a degree, I didn’t feel ready. The skill training from Saksham Nari gave me more than just technical knowledge — it gave me confidence. Today, I manage online marketing for two small brands and teach younger girls how to do it too.",
-    program: "Graduate & Mentor, Saksham Nari",
-    img: test,
-  },
-  {
-    name: "Dr. Preeti Das",
-    role: "Gynecologist | Medical Volunteer",
-    quote:
-      "Working with Swasthya Sakhi reminded me why I became a doctor. We meet women who’ve never had a health check-up in their life. When they finally speak about their pain, their stress, or their depression — you realize healthcare isn’t just treatment, it’s listening.",
-    program: "Volunteer Doctor, Health Camps",
-    img: test,
-  },
-  {
-    name: "Jitendra Kumar",
-    role: "Law Student | Volunteer Paralegal",
-    quote:
-      "At Nyay Sakhi, I saw the real world side of the law — not textbooks, but courage. We helped a survivor of domestic violence file her first FIR. I will never forget her relief when the complaint was finally accepted.",
-    program: "Paralegal Volunteer, Nyay Sakhi",
-    img: test,
-  },
-  {
-    name: "Salma Khatoon",
-    role: "Domestic Worker | Food Relief Recipient",
-    quote:
-      "During COVID, I lost my job and couldn’t feed my children properly. The hot meals and ration kits from Kanya Jagriti Foundation food program came like a blessing. For people like us, even a packet of rice means survival.",
-    program: "Beneficiary, Food Relief Program",
-    img: test,
-  },
-  {
-    name: "Amit Rungta",
-    role: "Business Owner | Donor Partner",
-    quote:
-      "I’ve supported many NGOs, but Kanya Jagriti stood out for one reason — transparency and impact. We funded the setup of a Shiksha Jyoti digital classroom. Within few months, students were really happy and ready to learn. That’s real progress.",
-    program: "CSR Donor, Shiksha Jyoti Program",
-    img: test,
-  },
 
   // 🌸 New Testimonials added exactly as provided
   {
@@ -142,12 +59,12 @@ const testimonials = [
 ];
 
 const TestimonialCard = () => {
+  const swiperRef = useRef(null);
+
   return (
     <section className="relative py-24 bg-linear-to-b from-[#e6faf6] via-[#fffaf5] to-white overflow-hidden">
-      {/* Floating gradient orbs */}
-      <div className="absolute top-10 left-20 w-72 h-72 bg-teal-200 blur-[120px] opacity-40 rounded-full animate-pulse"></div>
-      <div className="absolute bottom-0 right-10 w-80 h-80 bg-pink-200 blur-[130px] opacity-40 rounded-full animate-pulse"></div>
 
+      {/* ==== Heading & Subheading ==== */}
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -161,13 +78,14 @@ const TestimonialCard = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-center text-gray-600 text-lg mb-16"
+        className="text-center text-gray-600 text-lg mb-12"
       >
         Real people. Real stories. One shared mission — women’s empowerment.
       </motion.p>
 
+      {/* ==== Swiper Section ==== */}
       <Swiper
-        modules={[Pagination, Autoplay, EffectCoverflow]}
+        modules={[EffectCoverflow, Navigation]}
         effect="coverflow"
         coverflowEffect={{
           rotate: 30,
@@ -179,8 +97,9 @@ const TestimonialCard = () => {
         grabCursor={true}
         centeredSlides={true}
         loop={true}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
-        pagination={{ clickable: true }}
+        pagination={false}   // 🔥 Removed dots
+        navigation={false}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
         breakpoints={{
           320: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
@@ -191,11 +110,21 @@ const TestimonialCard = () => {
         {testimonials.map((t, i) => (
           <SwiperSlide key={i}>
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 200 }}
-              className="bg-white/90 backdrop-blur-xl border border-teal-100 rounded-3xl p-8 shadow-lg hover:shadow-teal-200/60 transition-all duration-500 flex flex-col items-center text-center"
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 180 }}
+              className="
+                bg-white/90 backdrop-blur-xl 
+                border border-teal-100 
+                rounded-3xl shadow-lg hover:shadow-teal-200/60 
+                transition-all duration-500 
+                flex flex-col items-center text-center 
+                p-6 
+                h-[400px]     /* 🔥 UNIFORM CARD HEIGHT */
+                max-h-[480px]
+              "
             >
-              <div className="relative mb-5">
+              {/* Avatar */}
+              <div className="relative mb-4">
                 <div className="absolute inset-0 bg-teal-300 blur-2xl rounded-full opacity-20"></div>
                 <img
                   src={t.img}
@@ -203,20 +132,54 @@ const TestimonialCard = () => {
                   className="w-20 h-20 rounded-full border-4 border-[#00a0a0] object-cover shadow-md relative z-10"
                 />
               </div>
+
+              {/* Name */}
               <h4 className="text-lg font-semibold text-[#004b4b]">{t.name}</h4>
-              <p className="text-sm text-gray-500 mb-3 italic">{t.role}</p>
-              <blockquote className="text-gray-700 text-sm leading-relaxed max-w-sm mx-auto">
+
+              {/* Role */}
+              <p className="text-sm text-gray-500 mb-3 italic line-clamp-2">{t.role}</p>
+
+              {/* Quote (scrollable if long) */}
+              <blockquote
+                className="
+                  text-gray-700 text-sm leading-relaxed 
+                  max-w-sm mx-auto 
+                  overflow-y-auto 
+                  px-2
+                  mb-3
+                  h-[140px]   /* 🔥 Fixed quote area */
+                "
+              >
                 <span className="text-3xl text-teal-400">“</span>
                 {t.quote}
                 <span className="text-3xl text-teal-400">”</span>
               </blockquote>
-              <p className="mt-4 text-sm font-medium text-[#007f7f]">
+
+              {/* Program */}
+              <p className="mt-auto text-sm font-medium text-[#007f7f]">
                 {t.program}
               </p>
             </motion.div>
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* ==== Prev / Next Buttons at BOTTOM ==== */}
+      <div className="flex justify-center gap-6 mt-3">
+        <button
+          onClick={() => swiperRef.current.slidePrev()}
+          className="px-5 py-2 bg-[#006666] text-white rounded-full shadow hover:bg-[#004c4c] transition"
+        >
+          Prev
+        </button>
+        <button
+          onClick={() => swiperRef.current.slideNext()}
+          className="px-5 py-2 bg-[#FF7F50] text-white rounded-full shadow hover:bg-[#e96b3e] transition"
+        >
+          Next
+        </button>
+      </div>
+
     </section>
   );
 };

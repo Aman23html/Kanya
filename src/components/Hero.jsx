@@ -63,7 +63,7 @@ const Hero = () => {
       `}</style>
 
       {/* ===== Hero Section ===== */}
-      <section className="relative min-h-[90vh] sm:min-h-screen p-0 mx-0! px-0! w-full! h-screen! overflow-hidden select-none m-0 border border-amber-700  ">
+      <section className="relative min-h-[90vh] sm:min-h-screen p-0 mx-0! px-0! w-full! h-screen! overflow-hidden select-none m-0   ">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           autoplay={{ delay: 5500, disableOnInteraction: false }}
@@ -99,7 +99,7 @@ const Hero = () => {
         >
           <motion.h1
             variants={fadeUp}
-            className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] max-w-5xl"
+            className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] max-w-5xl "
           >
             KANYA JAGRITI FOUNDATION
           </motion.h1>
@@ -119,13 +119,13 @@ const Hero = () => {
           >
             <Link
               to="/donate"
-              className="px-6 sm:px-8 py-2.5 sm:py-3 rounded-full bg-[#00b3a4] hover:bg-[#009688] text-white font-semibold shadow-lg transition-transform duration-300 hover:scale-105"
+              className="px-6 sm:px-8 py-2.5 sm:py-3 rounded-full bg-[#00b3a4] hover:bg-[#009688] text-white font-semibold shadow-lg transition-transform duration-300 hover:scale-105 "
             >
               Donate Now
             </Link>
             <a
               href="#about"
-              className="px-6 sm:px-8 py-2.5 sm:py-3 rounded-full border border-white/70 hover:bg-white hover:text-[#006666] font-semibold transition duration-300"
+              className="px-6 sm:px-8 py-2.5 sm:py-3 rounded-full border border-white/70 hover:bg-white hover:text-[#006666] font-semibold transition duration-300  "
             >
               Learn More
             </a>
@@ -137,16 +137,16 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="absolute bottom-2 sm:bottom-6 lg:bottom-12 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200 px-4 sm:px-6 md:px-8 py-5 sm:py-6 w-[92%] sm:w-[80%] md:w-[60%] z-30"
+          className="absolute bottom-8  sm:bottom-6 lg:bottom-12 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200 px-4 sm:px-6 md:px-8 py-5 sm:py-6 w-[92%] sm:w-[80%] md:w-[60%] z-30"
         >
-          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#007c7c] mb-3 sm:mb-4 text-left">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#007c7c] mb-3 sm:mb-4 text-center">
             Food Relief Fund
           </h3>
 
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-5 justify-between items-center">
-            <div className="flex flex-wrap gap-2 sm:gap-3 justify-center sm:justify-start grow">
+            <div className="flex flex-wrap gap-2 sm:gap-3 justify-center grow">
               {presetAmounts
-                .slice(0, window.innerWidth < 640 ? 3 : 6)
+                .slice(0, window.innerWidth < 1200 ? (window.innerWidth < 640 ? 2 : 3) : 6)
                 .map((val) => (
                   <button
                     key={val}
@@ -169,13 +169,16 @@ const Hero = () => {
                 className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg border border-gray-300 text-gray-700 text-sm sm:text-base w-28 sm:w-36 focus:outline-none focus:border-[#00b3a4]"
               />
             </div>
+        
 
-            <button
+            <div className ="w-full flex flex-row items-center justify-center">
+              <button
               onClick={handleDonateClick}
-              className="px-6 sm:px-8 py-2 sm:py-2.5 rounded-lg bg-[#00b3a4] text-white font-semibold hover:bg-[#009688] transition-all shadow-md"
+              className="px-6 sm:px-8 py-2 sm:py-2.5 rounded-lg bg-[#00b3a4] text-white font-semibold hover:bg-[#009688] transition-all shadow-md "
             >
               Donate
             </button>
+            </div>
           </div>
         </motion.div>
 
