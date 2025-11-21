@@ -166,18 +166,6 @@ export default function FoodClothing() {
               Food, Clothing, Shelter & Medical Help — ensuring dignity and care for women and girls.
             </p>
 
-            <div className="mt-8 bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-white max-w-2xl mx-auto">
-              <p className="text-lg italic">“Before empowerment comes care. Before dreams comes dignity.”</p>
-            </div>
-
-            <div className="mt-8 flex items-center justify-center gap-4">
-              <a href="/donate" className="px-6 py-3 rounded-full bg-[#0b663c] text-white font-semibold shadow">
-                Donate Now
-              </a>
-              <a href="/contact" className="px-5 py-3 rounded-full border text-white border-white/40">
-                Volunteer / Partner
-              </a>
-            </div>
           </motion.div>
         </div>
       </header>
