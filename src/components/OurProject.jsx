@@ -72,7 +72,7 @@ export default function OurProjects() {
   return (
     <section
       id="projects"
-      className="relative py-8 sm:py-10 bg-linear-to-b from-[#f9fcfd] to-[#ecf7f5] overflow-hidden"
+      className="relative py-10 sm:py-10 bg-linear-to-b from-[#f9fcfd] to-[#ecf7f5] overflow-hidden"
     >
       {/* Background Decorative Glows */}
       <div className="absolute -top-10 left-1/3 w-64 h-64 bg-[#88d1c3]/25 rounded-full blur-3xl -z-10"></div>
@@ -85,6 +85,7 @@ export default function OurProjects() {
         whileInView="show"
         viewport={{ once: false, amount: 0.2 }}
         className="text-3xl sm:text-4xl font-extrabold text-center text-[#006666] mb-10 tracking-wide"
+        
       >
         Our <span className="text-[#FF7F50]">Projects</span>
         <div className="w-16 h-[3px] bg-[#FF7F50]/60 mx-auto mt-2 rounded-full"></div>

@@ -17,7 +17,7 @@ const Footer = () => {
             KANYA JAGRITI FOUNDATION
           </h4>
           <p className="text-white/80 leading-relaxed mb-3">
-            C/o Mira Panja,Jharnapara, Nr. Babloo Dharamshala, 
+            C/o Mira Panja, Jharnapara, Nr. Babloo Dharamshala, 
             Dhanbad Hirapur, Dhanbad, Dhanbad- 826001, Jharkhand
           </p>
           <p className="text-white/80">

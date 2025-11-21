@@ -13,6 +13,13 @@ import camp from "../../assets/camp.webp";
 import food from "../../assets/food.webp";
 import mental from "../../assets/mental.webp";
 import Skill from "../../assets/Skill.webp";
+import heroImage from "../../assets/younghero.webp"; 
+import glimpse1 from "../../assets/Younggirl/Young1.webp";
+import glimpse2 from "../../assets/Younggirl/Young2.webp";
+import glimpse3 from "../../assets/Younggirl/Young3.webp";
+import glimpse4 from "../../assets/Younggirl/Young4.webp";
+import glimpse5 from "../../assets/Younggirl/Young5.webp";
+import glimpse6 from "../../assets/Younggirl/Young6.webp";
 
 export default function YoungGirl() {
   const stats = [
@@ -193,23 +200,24 @@ export default function YoungGirl() {
 }
 
 
+
       `}</style>
 
-{/* 🌿 Advanced Floating Particles */}
-<div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+{/* 🌿 Improved Floating Leaves / Particles */}
+<div className="absolute inset-0 overflow-hidden pointer-events-none z-20">
   {[...Array(25)].map((_, i) => {
-    const size = 6 + Math.random() * 24;
-    const duration = 12 + Math.random() * 25;
-    const delay = Math.random() * 8;
+    const size = 8 + Math.random() * 22;
+    const duration = 14 + Math.random() * 20;
+    const delay = Math.random() * 10;
     const left = Math.random() * 100;
-    const colorOptions = [
-      "rgba(16,185,129,0.4)",  // emerald
-      "rgba(34,197,94,0.35)",  // green
-      "rgba(132,204,22,0.3)",  // lime
-      "rgba(20,184,166,0.35)", // teal
-      "rgba(5,150,105,0.35)",  // darker emerald
+    const colors = [
+      "rgba(16,185,129,0.50)",
+      "rgba(34,197,94,0.90)",
+      "rgba(132,204,22,0.50)",
+      "rgba(20,184,166,0.55)",
+      "rgba(5,150,105,0.50)",
     ];
-    const color = colorOptions[Math.floor(Math.random() * colorOptions.length)];
+    const color = colors[Math.floor(Math.random() * colors.length)];
 
     return (
       <motion.span
@@ -221,28 +229,30 @@ export default function YoungGirl() {
           height: `${size}px`,
           background: `radial-gradient(circle, ${color}, transparent 70%)`,
           borderRadius: "50%",
-          boxShadow: `0 0 ${size * 1.2}px ${color}`,
-          filter: "blur(0.8px)",
+          opacity: 0.45,
+          boxShadow: `0 0 ${size * 1.4}px ${color}`,
+          filter: "blur(0.6px)",
         }}
         initial={{
-          y: Math.random() * -200,
+          y: -200 - Math.random() * 200,
+          x: Math.random() * 40 - 20,
           opacity: 0,
-          x: Math.random() * 50 - 25,
-          scale: 0.8 + Math.random() * 0.5,
+          scale: 0.7 + Math.random() * 0.6,
         }}
         animate={{
           y: "110vh",
-          opacity: [0.1, 0.5, 0.2],
           x: [
-            `${left + Math.random() * 20 - 10}%`,
-            `${left + Math.random() * 30 - 15}%`,
+            `${left}%`,
+            `${left + (Math.random() * 20 - 10)}%`,
+            `${left + (Math.random() * 30 - 15)}%`,
           ],
-          scale: [0.9, 1.1, 0.9],
+          opacity: [0.15, 100, 0.25],
+          rotate: [0, 45, -20, 30],
         }}
         transition={{
           duration,
           repeat: Infinity,
-          delay,
+          
           ease: "easeInOut",
         }}
       />
@@ -251,60 +261,52 @@ export default function YoungGirl() {
 </div>
 
 
+
       {/* HERO */}
-      <header className="relative z-10">
-        <div className="min-h-[80vh] flex items-center justify-center relative">
+      <header className="relative z-10 top-20">
+        <div className="min-h-[70vh] flex items-center justify-center relative">
           <motion.div
             className="absolute inset-0"
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 40, repeat: Infinity, ease: "easeInOut" }}
             style={{
               backgroundImage:
-                "linear-gradient(180deg, rgba(20,83,45,0.45), rgba(255,255,255,0.1)), url('https://images.unsplash.com/photo-1531182127180-1c17c2f6fe1b?auto=format&fit=crop&w=1600&q=80')",
+                `linear-gradient(180deg, rgba(20,83,45,0.45), rgba(255,255,255,0.1)), url(${heroImage})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           />
           <div className="max-w-5xl mx-auto text-center px-6 py-20 relative z-10">
             <motion.h1
-              className="text-5xl md:text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-green-700 via-emerald-600 to-teal-500"
-              initial={{ opacity: 0, y: -30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-              Young Girls Empowerment
-            </motion.h1>
-            <motion.p
-              className="mt-6 text-lg md:text-xl text-green-900 max-w-3xl mx-auto"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
-              <span className="font-semibold text-emerald-700">Kanya Shakti</span> — Building a generation of confident, educated, and self-reliant girls.
-            </motion.p>
-            <p className="text-lg italic mt-3 text-green-800">
-              “When you empower a girl, you empower generations.”
-            </p>
-            <div className="mt-10 flex flex-wrap justify-center gap-5">
-              <a
-                href="#join"
-                className="px-8 py-3 rounded-full bg-gradient-to-r from-green-600 to-emerald-500 text-white font-semibold shadow-md hover:shadow-xl hover:-translate-y-1 transition-all"
-              >
-                Get Involved
-              </a>
-              <a
-                href="#programs"
-                className="px-8 py-3 rounded-full border border-emerald-600 text-green-800 bg-white/40 hover:bg-white/60 backdrop-blur-sm transition-all"
-              >
-                Explore Programs
-              </a>
-            </div>
+  className="text-5xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]"
+  initial={{ opacity: 0, y: -30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+>
+  Young Girls Empowerment
+</motion.h1>
+
+<motion.p
+  className="mt-6 text-lg md:text-xl text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] max-w-3xl mx-auto"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.5 }}
+>
+  <span className="font-semibold text-yellow-200">Kanya Shakti</span> —
+  Building a generation of confident, educated, and self-reliant girls.
+</motion.p>
+
+<p className="text-lg italic mt-3 text-gray-100 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+  “When you empower a girl, you empower generations.”
+</p>
+
+            
           </div>
         </div>
       </header>
 
       {/* STATS */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 -mt-10 relative z-20">
+      <section className="max-w-7xl mx-auto px-6 md:px-12 mt-10 relative z-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((s, i) => (
             <motion.div
@@ -368,7 +370,51 @@ export default function YoungGirl() {
               </div>
             </div>
           ))}
-        </div>
+                 <motion.div
+  className="max-w-4xl mx-auto bg-white/80 backdrop-blur-md border border-emerald-200 rounded-3xl p-10 shadow-lg"
+  initial={{ opacity: 0, y: 15 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+>
+  <h3 className="text-3xl font-extrabold text-emerald-800 text-center mb-4 w-[600px">
+    About Kanya Shakti
+  </h3>
+
+  <p className="text-gray-700 text-center max-w-2xl mx-auto mb-8 leading-relaxed">
+    Kanya Shakti aims to nurture confidence, creativity, education, well-being, and 
+    leadership in young girls — empowering them to grow with dignity and discover 
+    their unique potential.
+  </p>
+
+  {/* CHARACTERISTICS SECTION */}
+  <div className="bg-emerald-50/80 border border-emerald-200 rounded-xl p-6 shadow-sm max-w-3xl w-[800px] mx-auto mt-6">
+  <h4 className="text-xl font-semibold text-emerald-800 text-center mb-3">
+    Skills & Characteristics
+  </h4>
+
+  <ul className="space-y-2 text-gray-700 text-[15px] leading-relaxed">
+    <li className="flex gap-2">
+      <span className="text-emerald-600">•</span>
+      Curious and eager to learn new skills and explore opportunities.
+    </li>
+    <li className="flex gap-2">
+      <span className="text-emerald-600">•</span>
+      Emotionally strong, thoughtful, and observant.
+    </li>
+    <li className="flex gap-2">
+      <span className="text-emerald-600">•</span>
+      Ambitious and inspired to grow into a confident, educated individual.
+    </li>
+    <li className="flex gap-2">
+      <span className="text-emerald-600">•</span>
+      Responsible and kind-hearted, caring for her family and community.
+    </li>
+  </ul>
+</div>
+
+</motion.div>
+</div>
+
       </section>
 
       {/* GALLERY */}
@@ -392,10 +438,12 @@ export default function YoungGirl() {
             className="w-full  py-10 h-110"
           >
             {[
-              "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1400&q=80",
-              "https://images.unsplash.com/photo-1598006782296-f9a5f90d5f86?auto=format&fit=crop&w=1400&q=80",
-              "https://images.unsplash.com/photo-1562176558-3cb7a2a165a4?auto=format&fit=crop&w=1400&q=80",
-              "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=80",
+              glimpse1,
+              glimpse2,
+              glimpse3,
+              glimpse4,
+              glimpse5,
+              glimpse6,
             ].map((src, i) => (
               <SwiperSlide key={i}>
                 <motion.div
@@ -441,7 +489,7 @@ export default function YoungGirl() {
               Donate
             </a>
             <a
-              href="/volunteer"
+              href="/contact"
               className="px-6 py-3 rounded-full border border-green-600 text-green-700 font-semibold bg-white hover:bg-green-50 transition"
             >
               Volunteer / Partner

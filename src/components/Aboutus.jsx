@@ -89,7 +89,7 @@ const Aboutus = () => {
 
           <motion.div variants={fadeUp} custom={3} className="mt-8 sm:mt-10">
             <a
-              href="/projects"
+              href="#projects"
               className="inline-block px-8 py-3 sm:px-10 sm:py-3.5 rounded-full bg-[#FF7F50] hover:bg-[#ff9269] text-white font-semibold shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg"
             >
               Explore Our Work

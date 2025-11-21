@@ -1,218 +1,346 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectFade } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/effect-fade";
+import CountUp from "react-countup";
 
-const slides = [
-  {
-    id: 1,
-    title: "Prakriti Raksha — Living in Harmony with Nature",
-    desc: "Building ecologically conscious and safety-aware communities where homes are sustainable and people thrive in balance with nature.",
-    img: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    id: 2,
-    title: "Hariyali Sakhi — Tree Plantation Movement",
-    desc: "Increasing green cover in rural and tribal areas through community-led plantation drives and youth-led environmental stewardship.",
-    img: "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1400&q=80",
-  },
-  {
-    id: 3,
-    title: "Surakshit Aangan — Household Safety Awareness",
-    desc: "Empowering families with training on fire safety, clean cooking, safe water, and sanitation — creating safer, healthier homes.",
-    img: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1400&q=80",
-  },
+// Using Unsplash images as placeholders since local assets were not provided
+const heroImage = "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=2000&q=80";
+const treePlantationImg = "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1400&q=80";
+const safetyImg = "https://images.unsplash.com/photo-1626139576127-450a4b12254a?auto=format&fit=crop&w=1400&q=80";
+const visionImg = "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1400&q=80";
+
+const galleryImages = [
+  "https://images.unsplash.com/photo-1588279102279-780b68430892?auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1611273426761-53c981188759?auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1588863376651-516c99651521?auto=format&fit=crop&w=1400&q=80",
 ];
 
-const Environment = () => {
+export default function Environment() {
+  // Custom Slider State
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const programs = [
+    {
+      id: "hariyali",
+      title: "Hariyali Sakhi — Tree Plantation Movement",
+      objective: "Goal: Increase green cover in rural and tribal areas through community-led plantation drives.",
+      activities: [
+        "Community tree plantation events",
+        "“One Girl, One Tree” campaign in schools",
+        "Native and medicinal plant distribution",
+        "Awareness on afforestation & water conservation",
+        "Tree guardianship & plantation tracking",
+      ],
+      img: treePlantationImg,
+    },
+    {
+      id: "surakshit",
+      title: "Surakshit Aangan — Household Safety Awareness",
+      objective: "Goal: Build safer households through awareness and preventive practices.",
+      activities: [
+        "Fire safety and first-aid training",
+        "Awareness on safe cooking practices",
+        "Safe storage of LPG/kerosene",
+        "Electrical safety & emergency response",
+        "Promoting smoke-free kitchens (chulha improvements)",
+        "Safe drinking water & sanitation practices",
+      ],
+      img: safetyImg,
+    },
+  ];
+
   return (
-    <div className="relative bg-linear-to-b from-emerald-50 via-white to-green-100 overflow-hidden mt-10">
-      {/* 🌿 Floating Leaf Pattern */}
-      <motion.div
-        className="absolute top-0 left-0 w-full h-full bg-[url('/assets/leaf-pattern.png')] opacity-5 bg-fixed bg-cover z-0"
-        initial={{ backgroundPositionY: 0 }}
-        animate={{ backgroundPositionY: "100%" }}
-        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-      ></motion.div>
+    <div className="relative w-full overflow-hidden bg-gradient-to-b from-[#f0fff4] via-[#ecfdf5] to-white text-gray-800 mt-10">
+      <style>{`
+        /* Floating Particles */
+        .particle {
+          position: absolute;
+          border-radius: 50%;
+          opacity: 0.2;
+          background: radial-gradient(circle, rgba(34,197,94,0.5), rgba(16,185,129,0.1));
+          filter: blur(1px);
+        }
 
-      {/* 🌱 Hero Section */}
-      <motion.div
-        className="relative z-10 text-center py-24"
-        initial={{ opacity: 0, y: -40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h1 className="text-6xl font-extrabold bg-linear-to-r from-emerald-700 via-green-500 to-lime-400 bg-clip-text text-transparent drop-shadow-sm">
-          Environment Protection <br />
-          <span className="text-3xl text-emerald-700 font-semibold">
-            (Prakriti Raksha)
-          </span>
-        </h1>
+        /* Flip Card Enhanced */
+        .flip-3d {
+          perspective: 1200px;
+        }
+        .flip-3d-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.9s ease, box-shadow 0.4s ease;
+          transform-style: preserve-3d;
+          border-radius: 24px;
+        }
+        .flip-3d:hover .flip-3d-inner {
+          transform: rotateY(180deg) scale(1.04);
+          box-shadow: 0 18px 40px rgba(0,0,0,0.2);
+        }
+        .flip-face {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+        }
+        .flip-back {
+          transform: rotateY(180deg);
+        }
 
-        <motion.p
-          className="mt-6 text-gray-700 text-lg max-w-4xl mx-auto leading-relaxed font-medium"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 1 }}
-        >
-          <span className="font-semibold text-emerald-700">
-            Prakriti Raksha
-          </span>{" "}
-          envisions a future where communities live in harmony with nature, and
-          where homes are safe, sustainable, and aware of everyday environmental
-          risks. This program engages women and young girls as agents of change,
-          believing that healthy people can only thrive in healthy environments.
-        </motion.p>
-        <motion.p
-          className="mt-4 text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-        >
-          It builds ecologically conscious and safety-aware rural and tribal
-          communities — starting at the grassroots and expanding outward through
-          education, participation, and collective care.
-        </motion.p>
-      </motion.div>
+        .particle {
+          position: absolute;
+          pointer-events: none;
+          z-index: 1;
+          animation: pulseGlow 5s ease-in-out infinite alternate;
+        }
 
-      {/* 🌀 Swiper Section */}
-      <Swiper
-        modules={[Autoplay, Pagination, EffectFade]}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
-        pagination={{ clickable: true }}
-        effect="fade"
-        className="w-[92%] md:w-[80%] mx-auto rounded-3xl shadow-2xl overflow-hidden mb-24"
-      >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide.id}>
-            <motion.div
-              className="relative w-full h-[500px] md:h-[650px]"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+        @keyframes pulseGlow {
+          from {
+            filter: brightness(0.8) blur(1px);
+          }
+          to {
+            filter: brightness(1.4) blur(1.5px);
+          }
+        }
+      `}</style>
+
+      {/* 🌿 Improved Floating Leaves / Particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-20">
+        {[...Array(25)].map((_, i) => {
+          const size = 8 + Math.random() * 22;
+          const duration = 14 + Math.random() * 20;
+          const left = Math.random() * 100;
+          const colors = [
+            "rgba(16,185,129,0.50)",
+            "rgba(34,197,94,0.90)",
+            "rgba(132,204,22,0.50)",
+            "rgba(20,184,166,0.55)",
+            "rgba(5,150,105,0.50)",
+          ];
+          const color = colors[Math.floor(Math.random() * colors.length)];
+
+          return (
+            <motion.span
+              key={i}
+              className="particle"
+              style={{
+                left: `${left}%`,
+                width: `${size}px`,
+                height: `${size}px`,
+                background: `radial-gradient(circle, ${color}, transparent 70%)`,
+                borderRadius: "50%",
+                opacity: 0.45,
+                boxShadow: `0 0 ${size * 1.4}px ${color}`,
+                filter: "blur(0.6px)",
+              }}
+              initial={{
+                y: -200 - Math.random() * 200,
+                x: Math.random() * 40 - 20,
+                opacity: 0,
+                scale: 0.7 + Math.random() * 0.6,
+              }}
+              animate={{
+                y: "110vh",
+                x: [
+                  `${left}%`,
+                  `${left + (Math.random() * 20 - 10)}%`,
+                  `${left + (Math.random() * 30 - 15)}%`,
+                ],
+                opacity: [0.15, 100, 0.25],
+                rotate: [0, 45, -20, 30],
+              }}
+              transition={{
+                duration,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          );
+        })}
+      </div>
+
+      {/* HERO */}
+      <header className="relative z-10 top-20">
+        <div className="min-h-[70vh] flex items-center justify-center relative">
+          <motion.div
+            className="absolute inset-0"
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 40, repeat: Infinity, ease: "easeInOut" }}
+            style={{
+              backgroundImage: `linear-gradient(180deg, rgba(20,83,45,0.55), rgba(20,83,45,0.2)), url(${heroImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+          <div className="max-w-5xl mx-auto text-center px-6 py-20 relative z-10">
+            <motion.h1
+              className="text-5xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-[0_3px_8px_rgba(0,0,0,0.9)]"
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              <img
-                src={slide.img}
-                alt={slide.title}
-                className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-700"
-                onError={(e) =>
-                  (e.target.src =
-                    "https://via.placeholder.com/1200x800?text=Image+Unavailable")
-                }
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent"></div>
+              Environment Protection
+            </motion.h1>
 
-              <motion.div
-                className="absolute bottom-8 left-8 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 max-w-md"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <h2 className="text-3xl font-semibold text-white drop-shadow-md">
-                  {slide.title}
-                </h2>
-                <p className="text-gray-200 text-sm mt-3 leading-relaxed">
-                  {slide.desc}
-                </p>
-              </motion.div>
-            </motion.div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            <motion.p
+              className="mt-6 text-lg md:text-xl text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] max-w-3xl mx-auto"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              <span className="font-semibold text-yellow-200">Prakriti Raksha</span> —
+              Living in Harmony with Nature.
+            </motion.p>
 
-      {/* 🌾 Interactive Grid Section */}
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-8 pb-28 max-w-7xl mx-auto relative z-10"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        {/* Hariyali Sakhi */}
-        <motion.div
-          className="group bg-white/70 backdrop-blur-xl rounded-2xl border border-emerald-100 overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-700"
-          whileHover={{ scale: 1.03 }}
-        >
-          <img
-            src="https://images.unsplash.com/photo-1524593135777-12ff56baba75?auto=format&fit=crop&w=1200&q=80"
-            alt="Hariyali Sakhi"
-            className="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-110"
-          />
-          <div className="p-6">
-            <h3 className="font-bold text-2xl text-emerald-700">
-              Hariyali Sakhi — Tree Plantation Movement
-            </h3>
-            <p className="text-gray-600 text-sm mt-3 leading-relaxed">
-              Goal: Increase green cover in rural and tribal areas through
-              community-led plantation drives.
+            <p className="text-lg italic mt-3 text-gray-100 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+              “Healthy people can only thrive in healthy environments.”
             </p>
-            <ul className="list-disc text-gray-700 text-sm mt-4 pl-4 space-y-1">
-              <li>Community tree plantation events</li>
-              <li>“One Girl, One Tree” school campaign</li>
-              <li>Native & medicinal plant distribution</li>
-              <li>Water conservation & afforestation awareness</li>
-              <li>Tree guardianship & youth monitoring</li>
-            </ul>
           </div>
-        </motion.div>
+        </div>
+      </header>
 
-        {/* Surakshit Aangan */}
-        <motion.div
-          className="group bg-white/70 backdrop-blur-xl rounded-2xl border border-emerald-100 overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-700"
-          whileHover={{ scale: 1.03 }}
-        >
-          <img
-            src="https://images.unsplash.com/photo-1567346469382-3c9bdb9b2f89?auto=format&fit=crop&w=1200&q=80"
-            alt="Surakshit Aangan"
-            className="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-110"
-          />
-          <div className="p-6">
-            <h3 className="font-bold text-2xl text-emerald-700">
-              Surakshit Aangan — Household Safety Awareness
-            </h3>
-            <p className="text-gray-600 text-sm mt-3 leading-relaxed">
-              Goal: Build safer households through awareness and preventive
-              practices.
-            </p>
-            <ul className="list-disc text-gray-700 text-sm mt-4 pl-4 space-y-1">
-              <li>Fire safety & first-aid training</li>
-              <li>Safe cooking & LPG/kerosene handling</li>
-              <li>Electrical safety & emergency response</li>
-              <li>Smoke-free kitchens (improved chulhas)</li>
-              <li>Safe drinking water & sanitation practices</li>
-            </ul>
-          </div>
-        </motion.div>
-      </motion.div>
+    
 
-      {/* 🍃 Floating Leaves */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        {[...Array(12)].map((_, i) => (
+      {/* PROGRAMS */}
+      <section id="programs" className="max-w-7xl mx-auto px-6 md:px-12 py-20">
+        <motion.h2 className="text-3xl md:text-4xl font-bold text-green-700 mt-10 text-center mb-12">
+          Our Key Initiatives
+        </motion.h2>
+
+        {/* Centered Grid for 2 items */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          {programs.map((p) => (
+            <div key={p.id} className="flip-3d h-[460px]">
+              <div className="flip-3d-inner">
+                {/* FRONT */}
+                <div className="flip-face bg-white/90 backdrop-blur-md border border-emerald-100 rounded-3xl overflow-hidden flex flex-col">
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    className="w-full h-52 object-cover"
+                  />
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-semibold text-emerald-700">
+                      {p.title}
+                    </h3>
+                    <p className="mt-3 text-gray-700 text-sm flex-grow leading-relaxed">
+                      {p.objective}
+                    </p>
+                    <div className="mt-4 text-emerald-600 text-sm font-semibold">
+                      Hover to see activities →
+                    </div>
+                  </div>
+                </div>
+
+                {/* BACK */}
+                <div className="flip-face flip-back bg-gradient-to-br from-emerald-700 to-teal-600 rounded-3xl p-6 flex flex-col justify-center shadow-inner">
+                  <h4 className="text-xl font-bold text-white mb-4 text-center">
+                    Key Activities
+                  </h4>
+                  <ul className="space-y-2 text-white text-[15px] leading-relaxed">
+                    {p.activities.map((act, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span>•</span> {act}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* GALLERY (Custom Slider Implementation) */}
+      <section className="py-16 bg-gradient-to-b from-[#f7fff7] to-[#e8fff0]">
+  <div className="px-4 md:px-8">
+
+    <h3 className="text-3xl font-bold text-[#14532d] text-center mb-10">
+      Glimpses — Jeevan Aadhar in Action
+    </h3>
+
+    <Swiper
+      modules={[Autoplay, Pagination]}
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
+      pagination={{ clickable: true }}
+      loop={true}
+      spaceBetween={20}
+      slidesPerView={1.1}
+      breakpoints={{
+        640: { slidesPerView: 1.5 },
+        1024: { slidesPerView: 2.2 },
+        1280: { slidesPerView: 3 },
+      }}
+      className="pb-10"
+    >
+      {[
+       
+      ].map((src, i) => (
+        <SwiperSlide key={i}>
           <motion.div
-            key={i}
-            className="absolute w-8 h-8 bg-[url('/assets/leaf.svg')] bg-contain bg-no-repeat opacity-30"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-              rotate: Math.random() * 360,
-            }}
-            animate={{
-              y: ["0%", "120%"],
-              rotate: [0, 360],
-            }}
-            transition={{
-              duration: 25 + Math.random() * 10,
-              repeat: Infinity,
-              ease: "linear",
-              delay: Math.random() * 5,
-            }}
-          />
-        ))}
-      </div>
+            whileHover={{ scale: 1.03 }}
+            className="relative h-72 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-xl bg-white"
+          >
+            <img
+              src={src}
+              alt={`Activity ${i + 1}`}
+              className="w-full h-full object-cover "
+              loading="lazy"
+            />
+
+            <div className="absolute bottom-4 left-4 bg-white/85 backdrop-blur-sm 
+                            px-3 py-1 rounded text-sm font-semibold text-[#0b663c] shadow">
+              Field Activity #{i + 1}
+            </div>
+          </motion.div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
+</section>
+
+
+      {/* CTA */}
+      <section
+        id="join"
+        className="py-12 bg-gradient-to-r from-emerald-50 to-green-100"
+      >
+        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h4 className="text-2xl font-bold text-green-800">
+              Join the Green Movement
+            </h4>
+            <p className="text-gray-700">
+              Support our mission to build sustainable, safe, and eco-friendly communities.
+            </p>
+          </div>
+
+          <div className="flex gap-3">
+            <a
+              href="/donate"
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-green-600 to-emerald-500 text-white font-semibold shadow hover:brightness-95 transition"
+            >
+              Donate
+            </a>
+            <a
+              href="/contact"
+              className="px-6 py-3 rounded-full border border-green-600 text-green-700 font-semibold bg-white hover:bg-green-50 transition"
+            >
+              Volunteer / Partner
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
-};
-
-export default Environment;
+}

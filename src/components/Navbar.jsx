@@ -57,7 +57,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2">
             <FaPhoneAlt className="text-[#6dd3c6] text-[14px]" />
             <a href="tel:9503618951" className="hover:underline hover:text-[#6dd3c6]">
-              9503618951
+              +91 9503618951
             </a>
           </div>
         </div>
