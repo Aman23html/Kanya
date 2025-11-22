@@ -3,39 +3,55 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import test from "../assets/test.png";
+import glimpse3 from "../assets/Younggirl/Young3.webp";
+import Mother3 from "../assets/Mother/Mother3.webp";
+import Trible3 from "../assets/Trible/Trible3.webp"; 
+import Vol2 from "../assets/Voluenteer/Vol2.webp";
+import Legal3 from "../assets/Legal/Legal3.webp";
+import food3 from "../assets/Food/F3.webp";
+import Finance4 from "../assets/Finance/Finance4.webp";
+import Env4 from "../assets/Environment/Env4.webp";
 
 const purposes = [
   {
     title: "Young Girls Empowerment",
-    desc: "Enable life skills, self-confidence, and leadership in young girls."
+    desc: "Enable life skills, self-confidence, and leadership in young girls.",
+    img: glimpse3
   },
   {
     title: "Tribal Girl Children Care",
-    desc: "Support care and opportunities for tribal girl children."
+    desc: "Support care and opportunities for tribal girl children.",
+    img: Trible3
   },
   {
     title: "Food, Clothing, Shelter & Medical Help",
-    desc: "Provide basic needs and medical help for those in need."
+    desc: "Provide basic needs and medical help for those in need.",
+    img: food3
   },
   {
     title: "Environment Protection",
-    desc: "Promote sustainable environmental actions and eco-friendly programs."
+    desc: "Promote sustainable environmental actions and eco-friendly programs.",
+    img: Env4
   },
   {
     title: "Legal Help",
-    desc: "Free legal aid for vulnerable individuals facing injustice."
+    desc: "Free legal aid for vulnerable individuals facing injustice.",
+    img: Legal3
   },
   {
     title: "Financial Independence",
-    desc: "Help women and families achieve financial self-reliance through training."
+    desc: "Help women and families achieve financial self-reliance through training.",  
+    img: Finance4
   },
   {
     title: "Volunteer Engagement Program",
-    desc: "Join hands in social work and development initiatives as a volunteer."
+    desc: "Join hands in social work and development initiatives as a volunteer.",
+    img: Vol2
   },
   {
     title: "Mothers’ Wellness Care",
-    desc: "Care for the well-being and health of mothers in need."
+    desc: "Care for the well-being and health of mothers in need.",
+    img: Mother3
   }
 ];
 
@@ -100,7 +116,7 @@ const Donate = () => {
               whileHover={{ scale: 1.03 }}
             >
               <img
-                src={test}
+                src={p.img}
                 alt={p.title}
                 className="rounded-xl h-32 sm:h-36 w-full object-cover shadow-md mb-4"
               />

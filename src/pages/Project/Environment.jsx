@@ -3,6 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 import CountUp from "react-countup";
+import Env1 from "../../assets/Environment/Env1.webp";
+import Env2 from "../../assets/Environment/Env2.webp";
+import Env3 from "../../assets/Environment/Env3.webp";
+import Env4 from "../../assets/Environment/Env4.webp";
+import Env5 from "../../assets/Environment/Env5.webp";
 
 // Using Unsplash images as placeholders since local assets were not provided
 const heroImage = "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=2000&q=80";
@@ -11,11 +16,11 @@ const safetyImg = "https://images.unsplash.com/photo-1626139576127-450a4b12254a?
 const visionImg = "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1400&q=80";
 
 const galleryImages = [
-  "https://images.unsplash.com/photo-1588279102279-780b68430892?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1611273426761-53c981188759?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1588863376651-516c99651521?auto=format&fit=crop&w=1400&q=80",
+  Env1,
+  Env2,
+  Env3,
+  Env4,
+  Env5,
 ];
 
 export default function Environment() {
@@ -283,9 +288,7 @@ export default function Environment() {
       }}
       className="pb-10"
     >
-      {[
-       
-      ].map((src, i) => (
+      {galleryImages.map((src, i) => (
         <SwiperSlide key={i}>
           <motion.div
             whileHover={{ scale: 1.03 }}
