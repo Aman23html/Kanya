@@ -11,7 +11,7 @@ import glimpse2 from "../assets/Younggirl/Young2.webp";
 import glimpse3 from "../assets/Younggirl/Young3.webp";
 import glimpse4 from "../assets/Younggirl/Young4.webp";
 import glimpse5 from "../assets/Younggirl/Young5.webp";
-import glimpse6 from "../assets/Younggirl/Young6.webp";
+import glimpse6 from "../assets/Younggirl/young6.webp";
 import Mother1 from "../assets/Mother/Mother1.webp";
 import Mother2 from "../assets/Mother/Mother2.webp";
 import Mother3 from "../assets/Mother/Mother3.webp";
