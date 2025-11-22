@@ -19,7 +19,7 @@ import glimpse2 from "../../assets/Younggirl/Young2.webp";
 import glimpse3 from "../../assets/Younggirl/Young3.webp";
 import glimpse4 from "../../assets/Younggirl/Young4.webp";
 import glimpse5 from "../../assets/Younggirl/Young5.webp";
-import glimpse6 from "../../assets/Younggirl/Young6.webp";
+import glimpse6 from "../../assets/Younggirl/young6.webp";
 
 export default function YoungGirl() {
   const stats = [
